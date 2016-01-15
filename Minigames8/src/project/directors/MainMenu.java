@@ -15,6 +15,7 @@ public class MainMenu extends Screen {
 	}
 
 	public void paintScreen(Graphics2D g2) {
+		g2.setColor(Color.blue);
 		g2.fillRect(0,0,width,height);
 		g2.setColor(Color.white);
 		UtilityMethods.centerTextAtY(g2, "You can select a game on this menu.", width, 50);

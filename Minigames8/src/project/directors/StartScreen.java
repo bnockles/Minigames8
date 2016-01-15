@@ -12,7 +12,7 @@ public class StartScreen extends Screen implements KeyListener{
 	}
 
 	public KeyListener getKeyListener() {
-		return null;
+		return this;
 	}
 
 	public void paintScreen(Graphics2D g2) {
