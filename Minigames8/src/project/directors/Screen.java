@@ -9,10 +9,14 @@ public abstract class Screen {
 	Game game;
 	BufferedImage screenImage;
 	KeyListener keyListener;
+	int width;
+	int height;
 	
 	public Screen(Game game) {
 		this.game = game;
-		screenImage = new BufferedImage(game.getWidth(), game.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		width = game.getWidth();
+		height = game.getHeight();
+		screenImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g2 = (Graphics2D)screenImage.getGraphics();
 		paintScreen(g2);
 	}
