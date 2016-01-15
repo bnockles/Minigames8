@@ -7,6 +7,10 @@ import javax.swing.JFrame;
 
 public class Game extends JFrame{
 
+	Screen activeScreen;//the screen that is currently showing;
+	int width;
+	int height;
+	
 	public static void main(String[] args) {
 		new Game();
 	}
@@ -18,8 +22,7 @@ public class Game extends JFrame{
 	}
 
 	private void reset() {
-		// TODO Auto-generated method stub
-		
+		Screen startScreen = new Screen(this);
 	}
 
 	private void applySettings() {
@@ -31,7 +34,18 @@ public class Game extends JFrame{
 		setSize(width,height);
 		setLocation((int)(screenSize.getWidth()-width)/2, (int)(screenSize.getHeight()-height)/2);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setUndecorated(true);
+		setUndecorated(false);
 		
 	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+	
+	
+	
 }
