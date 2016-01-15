@@ -12,6 +12,7 @@ public abstract class Screen {
 	int width;
 	int height;
 	
+	//Game is a parameter here so that every screen can control the game while it is active
 	public Screen(Game game) {
 		this.game = game;
 		width = game.getWidth();
