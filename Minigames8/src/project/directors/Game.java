@@ -24,18 +24,13 @@ public class Game extends JFrame{
 
 	private void reset() {
 		Screen startScreen = new StartScreen(this);
-		activeScreen=startScreen;
 		setScreen(startScreen);
 	}
 
 	public void setScreen(Screen newScreen) {
 		//remove former keyListeners (if any)
-		try{
-			removeKeyListener(activeScreen.getKeyListener());
-		}catch(NullPointerException e){
-			e.printStackTrace();
-			//nothing happens, since this just mean there is no listener to remove
-		}
+		if(activeScreen!=null)removeKeyListener(activeScreen.getKeyListener());
+
 		activeScreen=newScreen;
 		repaint();//so that the old screen is no longer visible
 		addKeyListener(activeScreen.getKeyListener());
