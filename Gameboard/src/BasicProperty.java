@@ -26,4 +26,7 @@ public class BasicProperty extends Property {
 		public void sell(){
 			
 		}
+		public void resetToInitial(){
+			this.currentPrice = this.initialPrice;
+		}
 }
