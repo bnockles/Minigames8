@@ -2,7 +2,7 @@
 public class BasicProperty extends Property {
 		int initialPrice;/** DOES NOT HAVE A SETTER**/
 		int currentPrice;
-		
+		//HELP COMMENT
 		/**
 		 * NEED TO IMPLEMENT OUR CONSTRUCTOR
 		 **/
