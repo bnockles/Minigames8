@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class GameBoard {
-	//2D arrayList of all property values
+	//2D arrayList of all property values, we will decide what goes in this array with or peers 
 	ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
 	
 	public static void main(String[] args) {
