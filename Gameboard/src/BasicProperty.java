@@ -1,13 +1,15 @@
 
 public class BasicProperty extends Property {
+		//Fields
 		int initialPrice;/** DOES NOT HAVE A SETTER**/
 		int currentPrice;
 		
-		/**
-		 * NEED TO IMPLEMENT OUR CONSTRUCTOR
-		 **/
+		/*********** Constructor ***********************/
+		public BasicProperty(String propertyName, String propertyDescription) {
+		super(propertyName, propertyDescription);
+		}
 		
-		//Getters and Setters
+		/*********** Getters and Setters****************/
 		public int getInitialPrice(){
 			return this.initialPrice;
 		}
@@ -19,7 +21,7 @@ public class BasicProperty extends Property {
 			this.currentPrice = newPrice;
 		}
 		
-		//Methods required by BUYABLE interface
+		/*********** Methods required by BUYABLE interface ****/
 		public void buy(){
 			
 		}

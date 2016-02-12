@@ -4,9 +4,9 @@ public class Property {
 	String description;
 	
 	//Constructor
-	public void property(String propertyName, String propertyDesciption){
+	public Property(String propertyName, String propertyDescription) {
 		name = propertyName;
-		description = propertyDesciption;
+		description = propertyDescription;
 	}
 	
 	//Getters and setters
