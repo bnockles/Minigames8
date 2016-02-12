@@ -1,37 +1,68 @@
 import java.util.ArrayList;
 
 public class GameBoard {
+	
 	//2D arrayList of all property values, we will decide what goes in this array with or peers 
-	ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
-	ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
-
+	static ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
+	
+	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
+	static int numOfBasicProperties = allBasicPropertiesInfo.get(0).size();
+	
+	
 	
 	public static void main(String[] args) {
-		//We will discuss with our peers what the names and descriptions will be
-		generateBasicProperty("Blue1", "Blue1 is the worst property, it's like owning nothing ");
-		generateBasicProperty("Blue2", "Blue2 is the 2nd worst property, it's almost like owning nothing ");
-		generateBasicProperty("Blue3", "Blue3 is the 3rd worst property, it's pretty much like owning nothing ");
-		
+		generateBoard();
 	}
 	
 	//Generates all Basic Properties at beginning of game
-	/**
-	public void generateallBasicProperties(){
-		for(int i=0;i<allBasicPropertiesInfo.size();i++){
-			for(int j=0;j<allBasicPropertiesInfo.size();j++){
-				generateBasicProperty(allBasicPropertiesInfo.get(i),allBasicPropertiesInfo.get(i).get(j));
-			}
+	public static void generateBoard() {
+		generateAllBasicProperties();
+		generateAllChanceCardProperties();
+		generateAllOtherProperties();	
+		displayGameBoard();
+	}
+
+	public static void generateAllOtherProperties() {
+		
+	}
+
+	public static void generateAllChanceCardProperties() {
+		
+	}
+
+	public static void generateAllBasicProperties() {
+		for(int i=0;i<numOfBasicProperties;i++){
+			new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1));
 		}
 	}
-	**/
-	public static void generateBasicProperty(String name,String description){
-		printPropertyInfo(new BasicProperty(name,description));
+	
+	//Generates Players at beginning of game
+	public static void genPlayer(int numOfPlayers){
+		for(int i=0;i<numOfPlayers+1;i++){
+			new Player(choosePlayerName(),chooseImageSrc());
+		}
 	}
-	private static void printPropertyInfo(Property subject) {
-		System.out.println("You created a basic property with a name of " + 
-							subject.getName()+
-							" and a description of '"+
-							subject.getDescription()+
-							"'");
+	
+	public static String choosePlayerName() {
+		/*
+		 * POPUP
+		 * PLAYER IS ASKED WHAT NAME HE/SHE WANTS
+		 * WAITFORINPUT
+		 * CONFIRM NAME
+		 * RETURN NAME
+		 */
+		return "";
+	}
+
+	public static String chooseImageSrc() {
+		/*
+		 * POPUP
+		 * PLAYER IS ASKED WHAT CHARCTER HE/SHE WANTS
+		 * PRINT LIST OF CHARACTERS
+		 * WAITFORINPUT
+		 * CONFIRM CHOICE
+		 * RETURN CHOICE
+		 */
+		return "";
 	}
 }
