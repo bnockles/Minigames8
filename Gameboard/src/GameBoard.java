@@ -11,6 +11,18 @@ public class GameBoard {
 		generateBasicProperty("Blue3", "Blue3 is the 3rd worst property, it's pretty much like owning nothing ");
 		
 	}
+	
+	//Generates all Basic Properties at beginning of game
+	/**
+	public void generateallBasicProperties(){
+		for(int i=0;i<allProperties.size();i++){
+			for(int j=0;j<allProperties.size();j++){
+				generateBasicProperty(allProperties.get(i),allProperties.get(i).get(j));
+			}
+		}
+		new Property(name,description)
+	}
+	**/
 	public static void generateBasicProperty(String name,String description){
 		printPropertyInfo(new Property(name,description));
 	}
