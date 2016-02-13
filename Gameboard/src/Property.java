@@ -3,13 +3,15 @@ public class Property {
 	String name;
 	String description;
 	
-	//Constructor
+	/********Constructor ******************/
 	public Property(String propertyName, String propertyDescription) {
 		name = propertyName;
 		description = propertyDescription;
 	}
+	/******** END CONSTRUCTOR *************/
 	
-	//Getters and setters
+	
+	/*******Getters and setters *************/
 	public String getName(){
 		return this.name;
 	}
@@ -23,4 +25,5 @@ public class Property {
 	public void setDescription(String newDescription){
 		this.description = newDescription;
 	}
+	/******* END GETTERS AND SETTERS*********/
 }
