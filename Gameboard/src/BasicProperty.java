@@ -32,7 +32,7 @@ public class BasicProperty extends Property {
 		public void sell(){
 			
 		}
-		public void resetToInitial(){
+		public void resetToInitialPrice(){
 			this.currentPrice = this.initialPrice;
 		}
 }
