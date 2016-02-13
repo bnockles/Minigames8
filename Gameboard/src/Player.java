@@ -24,7 +24,7 @@ public class Player {
 
 	
 	public ArrayList<Player> generateRandomPlayerOrder(){
-		//Creates temp ArrayList for use later and ArrayList to be returned
+		//Creates temporary ArrayList for use later and ArrayList to be returned
 		ArrayList<Player> minigameOrder = new ArrayList<Player>();
 		ArrayList<Player> tempArrayList = playerOrder;
 		
