@@ -6,7 +6,7 @@ public class GameBoard {
 	static ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
 	
 	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
-	
+	static ArrayList<ArrayList<String>> allChanceCardPropertiesInfo = new ArrayList<ArrayList<String>>();
 	
 	
 	public static void main(String[] args) {
@@ -31,7 +31,9 @@ public class GameBoard {
 	}
 
 	public static void generateAllChanceCardProperties() {
-		
+		for(int i=0;i<allChanceCardPropertiesInfo.get(0).size();i++){
+			new ChanceCardProperty(allChanceCardPropertiesInfo.get(i).get(0),allChanceCardPropertiesInfo.get(i).get(1));
+		}
 	}
 
 	public static void generateAllBasicProperties() {
