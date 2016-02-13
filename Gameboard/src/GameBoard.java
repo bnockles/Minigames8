@@ -11,6 +11,7 @@ public class GameBoard {
 	
 	
 	public static void main(String[] args) {
+		genPlayers(4);
 		generateBoard();
 	}
 	
@@ -20,6 +21,10 @@ public class GameBoard {
 		generateAllChanceCardProperties();
 		generateAllOtherProperties();	
 		displayGameBoard();
+	}
+
+	public static void displayGameBoard() {
+		//TO BE  WRITTEN
 	}
 
 	public static void generateAllOtherProperties() {
@@ -37,9 +42,9 @@ public class GameBoard {
 	}
 	
 	//Generates Players at beginning of game
-	public static void genPlayer(int numOfPlayers){
+	public static void genPlayers(int numOfPlayers){
 		for(int i=0;i<numOfPlayers+1;i++){
-			new Player(choosePlayerName(),chooseImageSrc());
+			Player.playerOrder.add(new Player(choosePlayerName(),chooseImageSrc()));
 		}
 	}
 	
