@@ -6,14 +6,20 @@ public class GameBoard {
 	static ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
 	
 	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
-	static int numOfBasicProperties = allBasicPropertiesInfo.get(0).size();
+	//static int numOfBasicProperties = allBasicPropertiesInfo.get(0).size();
 	
 	
 	
 	public static void main(String[] args) {
 		genPlayers(4);
+		for(int i=0;i<Player.playerOrder.size();i++){
+			System.out.println(Player.playerOrder.get(i).getName() + Player.playerOrder.get(i).getImageSrc()+ Player.playerOrder.get(i).getCurrency() + Player.playerOrder.get(i).getPlaying() );
+		}
+		/**
+		genPlayers(4);
 		generateBoard();
 		displayGameBoard();
+		**/
 	}
 	
 	//Generates all Basic Properties at beginning of game
@@ -56,7 +62,7 @@ public class GameBoard {
 		 * CONFIRM NAME
 		 * RETURN NAME
 		 */
-		return "";
+		return "Fish";
 	}
 
 	public static String chooseImageSrc() {
@@ -68,6 +74,6 @@ public class GameBoard {
 		 * CONFIRM CHOICE
 		 * RETURN CHOICE
 		 */
-		return "";
+		return "Fish.src";
 	}
 }

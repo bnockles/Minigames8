@@ -15,7 +15,7 @@ public class Player {
 	
 	/*********** CONSTRUCTOR *******************/
 	public Player(String playerName,String playerImageSrc){
-		boolean playing = true;
+		this.playing = true;
 		this.name = playerName;
 		this.currency = startingAmount;
 		this.imageSrc=playerImageSrc;
@@ -62,6 +62,9 @@ public class Player {
 	}
 	public String getName() {
 		return name;
+	}
+	public boolean getPlaying(){
+		return this.playing;
 	}
 	/******** END GETTERS AND SETTERS ******************/
 }
