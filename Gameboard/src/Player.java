@@ -20,7 +20,12 @@ public class Player {
 		this.currency = startingAmount;
 		this.imageSrc=playerImageSrc;
 	}
-	
+
+	public static ArrayList<Player> getPlayerOrder() {
+		return playerOrder;
+	}
+
+
 	public ArrayList<Player> generateRandomPlayerOrder(){
 		//Creates temp ArrayList for use later and ArrayList to be returned
 		ArrayList<Player> minigameOrder = new ArrayList<Player>();
@@ -37,4 +42,28 @@ public class Player {
 		}
 		return minigameOrder;
 	}
+	
+	/********* GETTERS AND SETTERS***********************/
+	public int getCurrency() {
+		return currency;
+	}
+	public void setCurrency(int currency) {
+		this.currency = currency;
+	}
+	public String getImageSrc() {
+		return imageSrc;
+	}
+	public void setImageSrc(String imageSrc) {
+		this.imageSrc = imageSrc;
+	}
+	public boolean isPlaying() {
+		return playing;
+	}
+	public void setPlaying(boolean playing) {
+		this.playing = playing;
+	}
+	public String getName() {
+		return name;
+	}
+	/******** END GETTERS AND SETTERS ******************/
 }
