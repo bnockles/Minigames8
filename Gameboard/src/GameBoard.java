@@ -5,7 +5,18 @@ public class GameBoard {
 	//2D arrayList of all property values, we will decide what goes in this array with or peers 
 	static ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
 	
+	/**
+	 * allBasicPropertiesInfo.get(0) = name;
+	 * allBasicPropertiesInfo.get(1) = description;
+	 * allBasicPropertiesInfo.get(2) = initialPrice;
+	 */
 	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
+	
+	/**
+	 * allChanceCardPropertiesInfo.get(0) = name;
+	 * allChanceCardPropertiesInfo.get(1) = description;
+	 * allChanceCardPropertiesInfo.get(2) = card;
+	 */
 	static ArrayList<ArrayList<String>> allChanceCardPropertiesInfo = new ArrayList<ArrayList<String>>();
 	
 	
@@ -38,7 +49,7 @@ public class GameBoard {
 
 	public static void generateAllBasicProperties() {
 			for(int i=0;i<allBasicPropertiesInfo.get(0).size();i++){
-				new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1));
+				new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1),Integer.parseInt(allBasicPropertiesInfo.get(i).get(2)));
 			}
 	}
 	

@@ -5,17 +5,17 @@ public class BasicProperty extends Property {
 		int currentPrice;
 		
 		/*********** Constructor ***********************/
-		public BasicProperty(String propertyName, String propertyDescription) {
+		public BasicProperty(String propertyName, String propertyDescription,int initialPrice) {
 		super(propertyName, propertyDescription);
+		this.name = propertyName;
+		this.description = propertyDescription;
+		this.initialPrice = initialPrice;
+		this.currentPrice = initialPrice;
 		}
 		/*********** END CONSTRUCTOR *******************/
 		
 		
 		/*********** Getters and Setters****************/
-		public int getInitialPrice(){
-			return this.initialPrice;
-		}
-		
 		public int getCurrentPrice(){
 			return this.currentPrice;
 		}
