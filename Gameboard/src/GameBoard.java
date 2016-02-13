@@ -6,20 +6,13 @@ public class GameBoard {
 	static ArrayList<ArrayList<Property>> allProperties = new ArrayList<ArrayList<Property>>();
 	
 	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
-	//static int numOfBasicProperties = allBasicPropertiesInfo.get(0).size();
 	
 	
 	
 	public static void main(String[] args) {
 		genPlayers(4);
-		for(int i=0;i<Player.playerOrder.size();i++){
-			System.out.println(Player.playerOrder.get(i).getName() + Player.playerOrder.get(i).getImageSrc()+ Player.playerOrder.get(i).getCurrency() + Player.playerOrder.get(i).getPlaying() );
-		}
-		/**
-		genPlayers(4);
 		generateBoard();
 		displayGameBoard();
-		**/
 	}
 	
 	//Generates all Basic Properties at beginning of game
@@ -42,9 +35,9 @@ public class GameBoard {
 	}
 
 	public static void generateAllBasicProperties() {
-		for(int i=0;i<numOfBasicProperties;i++){
-			new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1));
-		}
+			for(int i=0;i<allBasicPropertiesInfo.get(0).size();i++){
+				new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1));
+			}
 	}
 	
 	//Generates Players at beginning of game
