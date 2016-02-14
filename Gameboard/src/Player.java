@@ -10,9 +10,12 @@ public class Player {
 	int startingAmount = 150;
 	boolean playing;
 	
-	//Order of players for GameBoard
-	static ArrayList<Player> playerOrder = new  ArrayList<Player>();
+	//ArrayList of order of turns
+	static ArrayList<Player> playOrder = new  ArrayList<Player>();
 	
+	//ArrayList of player Ranking (1st,2nd,3rd,4th)
+	static ArrayList<Player> playerRanking = new  ArrayList<Player>();
+
 	/*********** CONSTRUCTOR *******************/
 	public Player(String playerName,String playerImageSrc){
 		this.playing = true;
@@ -26,14 +29,7 @@ public class Player {
 	public ArrayList<Player> generateRandomPlayerOrder(){
 		//Creates temporary ArrayList for use later and ArrayList to be returned
 		ArrayList<Player> minigameOrder = new ArrayList<Player>();
-		ArrayList<Player> tempArrayList = playerOrder;
-		
-		//Checks which players are still playing 
-		for(int i=0;i<playerOrder.size();i++){
-			if(playerOrder.get(i).getPlaying()==false){
-				tempArrayList.remove(i);
-			}
-		}
+		ArrayList<Player> tempArrayList = playOrder;
 		
 		//While returned ArrayList is less then all players currently in game
 		while(minigameOrder.size() < tempArrayList.size()){
