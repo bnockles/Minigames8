@@ -28,8 +28,15 @@ public class Player {
 		ArrayList<Player> minigameOrder = new ArrayList<Player>();
 		ArrayList<Player> tempArrayList = playerOrder;
 		
+		//Checks which players are still playing 
+		for(int i=0;i<playerOrder.size();i++){
+			if(playerOrder.get(i).getPlaying()==false){
+				tempArrayList.remove(i);
+			}
+		}
+		
 		//While returned ArrayList is less then all players currently in game
-		while(minigameOrder.size() < playerOrder.size()){
+		while(minigameOrder.size() < tempArrayList.size()){
 			//Random player order
 			int playerToAdd = (int)(Math.random()* tempArrayList.size());
 			
