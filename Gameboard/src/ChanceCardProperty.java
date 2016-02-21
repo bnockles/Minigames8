@@ -5,7 +5,7 @@ public class ChanceCardProperty extends Property {
 		super(propertyName, propertyDescription);
 		this.name = propertyName;
 		this.description= propertyDescription;
-		//this.Card = ;
+		//this.Card = chanceCard;
 	}
     	
 }

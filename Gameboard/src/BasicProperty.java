@@ -22,8 +22,7 @@ public class BasicProperty extends Property {
 		public void setCurrentPrice(int newPrice){
 			this.currentPrice = newPrice;
 		}
-		/*********** GETTERS AND SETTERS*****************/
-		
+
 		
 		/*********** Methods required by BUYABLE interface ****/
 		public void buy(){

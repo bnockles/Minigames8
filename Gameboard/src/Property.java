@@ -2,7 +2,7 @@
 public class Property {
 	String name;
 	String description;
-	
+
 	/********Constructor ******************/
 	public Property(String propertyName, String propertyDescription) {
 		name = propertyName;

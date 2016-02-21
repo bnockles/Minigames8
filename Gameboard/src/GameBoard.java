@@ -56,12 +56,12 @@ public class GameBoard {
 	//Generates Players at beginning of game
 	public static void genPlayers(int numOfPlayers){
 		for(int i=0;i<numOfPlayers+1;i++){
-			Player.playerOrder.add(new Player(choosePlayerName(),chooseImageSrc()));
+			Player.playOrder.add(new Player(choosePlayerName(),chooseImageSrc()));
 		}
 	}
 	
 	public static String choosePlayerName() {
-		/*
+		/*  
 		 * POPUP
 		 * PLAYER IS ASKED WHAT NAME HE/SHE WANTS
 		 * WAITFORINPUT
