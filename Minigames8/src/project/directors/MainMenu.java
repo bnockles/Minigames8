@@ -2,11 +2,12 @@ package project.directors;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import project.menus.GameMenu;
 
-public class MainMenu extends Screen {
+public class MainMenu extends Screen implements KeyListener {
 	
 	GameMenu gameMenu;
 	
@@ -14,9 +15,18 @@ public class MainMenu extends Screen {
 		super(game);
 		//gameMenu();
 	}
+	
+	public void keyPressed(KeyEvent k)
+	{
+		if(k.getKeyCode() == KeyEvent.VK_ESCAPE){
+			
+			Screen startScreen = new StartScreen(game);
+			game.setScreen(startScreen);
+		}
+	}
 
 	public KeyListener getKeyListener() {
-		return null;
+		return this;
 	}
 
 
@@ -26,6 +36,16 @@ public class MainMenu extends Screen {
 		g2.fillRect(0,0,width,height);
 		g2.setColor(Color.white);
 		UtilityMethods.centerTextAtY(g2, "This will be the game menu where you can save/load data.", width, 50);
+	}
+
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

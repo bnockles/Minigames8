@@ -16,4 +16,5 @@ public class UtilityMethods {
 		int x = (areaWidth-fm.stringWidth(text))/2;
 		g2.drawString(text, x, y);
 	}
+	
 }

@@ -15,12 +15,12 @@ public class GameMenu extends Screen{
 	
 	public void keyPressed(KeyEvent k)
 	{
-		if(k.getKeyCode() == KeyEvent.VK_1){
+		/**if(k.getKeyCode() == KeyEvent.VK_ESCAPE){
 			
 			Screen startScreen = new StartScreen(game);
+			
 			game.setScreen(startScreen);
-		}
-
+		}**/
 	}
 
 	public KeyListener getKeyListener() {
