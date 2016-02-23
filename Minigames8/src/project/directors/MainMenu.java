@@ -12,7 +12,7 @@ public class MainMenu extends Screen {
 	
 	public MainMenu(Game game) {
 		super(game);
-		gameMenu 
+		//gameMenu();
 	}
 
 	public KeyListener getKeyListener() {
@@ -25,7 +25,7 @@ public class MainMenu extends Screen {
 		g2.setColor(Color.blue);
 		g2.fillRect(0,0,width,height);
 		g2.setColor(Color.white);
-		UtilityMethods.centerTextAtY(g2, "You can select a game on this menu.", width, 50);
+		UtilityMethods.centerTextAtY(g2, "This will be the game menu where you can save/load data.", width, 50);
 	}
 
 }
