@@ -22,7 +22,7 @@ public class Game extends JFrame{
 		setVisible(true);//makes the frame visible
 	}
 
-	private void reset() {
+	public void reset() {
 		Screen startScreen = new StartScreen(this);
 		setScreen(startScreen);
 	}

@@ -1,3 +1,4 @@
+package project.gameDemo;
 // Arik Idrisy P8
 //package project.architecture;
 
@@ -7,11 +8,11 @@ import java.awt.event.KeyListener;
 import project.directors.Game;
 import project.directors.Screen;
 
-public class gameDemoScreen extends Screen {
+public class GameDemoScreen extends Screen {
   static int playerBoxH;
   static int playerBoxW;
   
-	public gameDemoScreen(Game game) {
+	public GameDemoScreen(Game game) {
 		super(game);
 		// TODO Auto-generated constructor stub
 	}
