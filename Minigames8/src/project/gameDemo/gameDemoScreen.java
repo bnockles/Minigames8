@@ -20,7 +20,7 @@ public class gameDemoScreen extends Screen {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	/*
 	public void paintScreen(Graphics2D g2) {
 		// TODO Auto-generated method stub
 		printPlayerInfoBox(g2, playerBoxInfoOne);
@@ -42,5 +42,5 @@ public class gameDemoScreen extends Screen {
 		g2.fillRect(playerBoxW,playerBoxH);
 	}
 	public void printPlayer
-
+	*/
 }
