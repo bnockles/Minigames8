@@ -17,14 +17,14 @@ public class Question {
 		this.frame = frame ;
 	}
 	
-	public int Prompt(String question, String objName, Icon icon, String[] options)
+	public int Prompt(String question, String objName, String[] options)
 	{
 		return JOptionPane.showOptionDialog(frame,
 			    question,
 			    objName,
 			    JOptionPane.YES_NO_CANCEL_OPTION,
 			    JOptionPane.QUESTION_MESSAGE,
-			    icon,
+			    null,
 			    options,
 			    options[2]);
 	}
