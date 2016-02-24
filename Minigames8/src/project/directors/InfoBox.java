@@ -28,18 +28,18 @@ public class InfoBox extends JPanel {
 	}
 	
 	public void paint(Graphics g) {
-	    //Dimension d = this.getPreferredSize();
 	    int fontSize = 20;
-	    String info = "hello" ;
+	    String info = "" ;
 	    g.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
 	    g.setColor(Color.blue);
 	    g.fillRect(x, y, width, height) ;
-	    g.setColor(Color.red);
+	    
 	    
 	    message(g, info) ;
 	  }
 	public void message(Graphics g, String info)
 	{
+		g.setColor(Color.red);
 	    g.drawString(info, x+25, y+25);
 	}
 	//main is for testing
