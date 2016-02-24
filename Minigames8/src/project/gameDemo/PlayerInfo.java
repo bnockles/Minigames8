@@ -4,9 +4,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class PlayerInfo extends GameSubTeamDemo {
-	// carmen - i basically created the players and set/get the scores-players.
-	// confused on how to make the invisibility things, isnt that graphics? send
-	// help S.O.S
+	// carmen - we needa make sure that the player amount doesnt exceed 4
 
 	// Cindy - Carmen Playerinfo is used to change the player's stats and a
 	// player is suppose
@@ -14,26 +12,7 @@ public class PlayerInfo extends GameSubTeamDemo {
 	// which can be used to
 	// make each individual players
 
-	// static String players;
-	// int score;
-	// static boolean playerVisibility;
-	//
-	// public void setName(String p){
-	// players = p;
-	//
-	// }
-	// public String getName(){
-	// return players;
-	//
-	// }
-	//
-	// public void setScore(int s){
-	// score = s;
-	//
-	// }
-	// public int getScore(){
-	// return score;
-	// }
+	
 
 	public static void continueGame() {
 
@@ -80,8 +59,7 @@ public class PlayerInfo extends GameSubTeamDemo {
 	
 	
 	
-	// hello friends, it is i lil carmz
-	// look at trello pls
+
 	// //implements chooseMinigame interface -- will pick the minigame that will
 	// be choosen
 	// implement chooseMinigame();
