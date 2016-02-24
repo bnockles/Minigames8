@@ -4,7 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-public abstract class Screen {
+import javax.swing.JFrame;
+
+public abstract class Screen extends JFrame {
 
 	Game game;
 	BufferedImage screenImage;

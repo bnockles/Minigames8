@@ -60,44 +60,44 @@ public class Game extends JFrame{
 	}
 	
 	//MOCK's DEMO CODE
-	InfoBox info = new InfoBox(50, 500, 100, 50) ;
-	Question question = new Question(this) ;
-	Alert alert = new Alert(this) ;
+//	InfoBox info = new InfoBox(50, 500, 100, 50) ;
+//	Question question = new Question(this) ;
+//	Alert alert = new Alert(this) ;
 	
-	public void paint(final Graphics g){
+	public void paint(Graphics g){
 		g.drawImage(activeScreen.getScreenImage(), 0, 0, null);
 		
-		info.paint(g) ;
-		setLayout(new GridLayout(20, 2, 10, 10));
-		
-		JButton bTech = new JButton("Brooklyn Tech (example property)");        
-	    JButton play = new JButton("PLAY");
-	    bTech.addActionListener(new ActionListener() {
-	         public void actionPerformed(ActionEvent e) {
-	            info.message(g, "Brooklyn Tech /n Current Owner: DOE /n Value: $priceless");
-	         }          
-	      });
-
-	    play.addActionListener(new ActionListener() {
-	         public void actionPerformed(ActionEvent e) {
-	            alert.message("Chen", "You Landed on the property Brooklyn Tech");
-	            String[] options = {"Offer to purchase", "Battle for ownership", "Pay Rent"} ;
-	            int n = question.Prompt("You landed on Brooklyn Tech. What would you like to do?", "Brooklyn Tech", options);
-	            switch(n){
-		            case 0:
-		            	alert.message("Chen", "You offered DOE to buy Brooklyn Tech");
-		            	break ;
-		            case 1:
-		            	alert.message("Chen", "You started a battle with DOE for Brooklyn Tech");
-		            	break ;
-		            case 2:
-		            	alert.message("Chen", "You paid rent to DOE");
-		            	break ;
-	            }
-	         }
-	      });
-	    add(bTech) ;
-	    add(play) ;
+//		info.paint(g) ;
+//		setLayout(new GridLayout(20, 2, 10, 10));
+//		
+//		JButton bTech = new JButton("Brooklyn Tech (example property)");        
+//	    JButton play = new JButton("PLAY");
+//	    bTech.addActionListener(new ActionListener() {
+//	         public void actionPerformed(ActionEvent e) {
+//	            info.message(g, "Brooklyn Tech /n Current Owner: DOE /n Value: $priceless");
+//	         }          
+//	      });
+//
+//	    play.addActionListener(new ActionListener() {
+//	         public void actionPerformed(ActionEvent e) {
+//	            alert.message("Chen", "You Landed on the property Brooklyn Tech");
+//	            String[] options = {"Offer to purchase", "Battle for ownership", "Pay Rent"} ;
+//	            int n = question.Prompt("You landed on Brooklyn Tech. What would you like to do?", "Brooklyn Tech", options);
+//	            switch(n){
+//		            case 0:
+//		            	alert.message("Chen", "You offered DOE to buy Brooklyn Tech");
+//		            	break ;
+//		            case 1:
+//		            	alert.message("Chen", "You started a battle with DOE for Brooklyn Tech");
+//		            	break ;
+//		            case 2:
+//		            	alert.message("Chen", "You paid rent to DOE");
+//		            	break ;
+//	            }
+//	         }
+//	      });
+//	    add(bTech) ;
+//	    add(play) ;
 	}
 	
 	public int getWidth() {
