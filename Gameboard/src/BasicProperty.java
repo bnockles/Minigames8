@@ -3,6 +3,7 @@ public class BasicProperty extends Property {
 		//Fields
 		int initialPrice;
 		int currentPrice;
+		Player owner;
 		
 		/*********** Constructor ***********************/
 		public BasicProperty(String propertyName, String propertyDescription,int initialPrice) {
