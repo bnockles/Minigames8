@@ -2,6 +2,7 @@ package project.gameDemo;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PlayerInfo extends GameSubTeamDemo {
 	ArrayList<Player> players;
@@ -74,10 +75,41 @@ public class PlayerInfo extends GameSubTeamDemo {
 		return nextPlayer;
 	}
 
-	private void determineWin() {
-		// TODO Auto-generated method stub
+	//Celina - wrote code to determine the winner
 
-	}
+	
+		public static void determineWin(){
+			//puts score into an variable
+			int p1Score = Player.p1.getScore();
+			int p2Score = p2.getScore();
+			int p3Score = p3.getScore();
+			int p4Score = p4.getScore();
+			
+			String p1Name = p1.getName();
+			String p2Name =	p2.getName();
+			String p3Name = p3.getName();
+			String p4Name = p4.getName();
+			
+			int scores[] = {p1Score, p2Score, p3Score, p4Score};
+			//sorts all the scores
+			Arrays.sort(scores);
+			
+			int winScore = scores[scores.length - 1];
+			
+			//display winner
+			if(p1Score == winScore){
+				System.out.println(p1Name + " won!");
+			}else if(p2Score == winScore){
+				System.out.println(p2Name + " won!");
+			}else if(p3Score == winScore){
+				System.out.println(p3Name + " won!");
+			}else if(p4Score == winScore){
+				System.out.println(p4Name + " won!");
+			}
+			
+			
+			
+		}
 
 	// //implements chooseMinigame interface -- will pick the minigame that will
 	// be choosen
