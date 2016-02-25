@@ -22,8 +22,10 @@ public class GameBoard {
 	
 	public static void main(String[] args) {
 		genPlayers(4);
+		/*
 		generateBoard();
 		displayGameBoard();
+		*/
 	}
 	
 	//Generates all Basic Properties at beginning of game
