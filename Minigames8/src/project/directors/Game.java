@@ -36,7 +36,7 @@ public class Game extends JFrame{
 		addKeyListener(activeScreen.getKeyListener());
 	}
 
-	private void applySettings() {
+	public void applySettings() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		//dimensions for the game (can change freely):
 		width = 1000;

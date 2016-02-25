@@ -6,7 +6,7 @@ import project.directors.Screen;
 public class GameSubTeamDemo extends Game {
 
 	public static void main(String[] args) {
-
+		GameSubTeamDemo x = new GameSubTeamDemo();
 		
 	}
 	public GameSubTeamDemo(){
