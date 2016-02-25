@@ -2,8 +2,13 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 public class MainMenu extends Screen {
+	BufferedImage originalImage = ImageIO.read(new File(""));
 	
 	public MainMenu(Game game) {
 		super(game);
@@ -14,22 +19,10 @@ public class MainMenu extends Screen {
 	}
 
 	public void paintScreen(Graphics2D g2) {
-		for (int i = 0; i < mapSections.size(); i++) {
-			if (i == playerRegion) {
-				BufferedImage backgrnd = mapSections.get(i).getMap();
-				UtilityMethods.scaleImage(g2, backgrnd, 0, 0, width, height);
-			}
-		}
-		for (int i = 0; i < obstacles.size(); i++) {
-			if(playerRegion == obstacles.get(i).getRegion()){
-				BufferedImage test = obstacles.get(i).getImage();
-				UtilityMethods.scaleImage(g2, test, obstacles.get(i).getxPos(), obstacles.get(i).getyPos(),
-						obstacles.get(i).getSizeX(), obstacles.get(i).getSizeY());
-			}
-		}
-		g2.setColor(Color.red);
-		g2.drawOval(xPos, yPos, 30, 30);
-		
+		g2.setColor(Color.blue);
+		g2.fillRect(0,0,width,height);
+		g2.setColor(Color.white);
+		UtilityMethods.centerTextAtY(g2, "You can select a game on this menu.", width, 50);
 	}
 
 }
