@@ -48,6 +48,10 @@ public class PlayerInfo extends GameSubTeamDemo {
 		return players.get(index);
 
 	}
+	
+	public ArrayList<Player> getPlayers(){
+		return players;
+	}
 
 	public void keyPressed(KeyEvent ee) {
 		if (ee.getKeyCode() == KeyEvent.VK_SPACE) {
