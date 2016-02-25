@@ -26,7 +26,7 @@ public class StartScreen extends Screen implements KeyListener{
 	}
 	
 	//MOCK's DEMO CODE
-		InfoBox info = new InfoBox(50, 500, 100, 50) ;
+//		InfoBox info = new InfoBox(50, 500, 100, 50) ;
 		Question question = new Question(this) ;
 		Alert alert = new Alert(this) ;
 
@@ -61,6 +61,9 @@ public class StartScreen extends Screen implements KeyListener{
 	            	alert.message("Chen", "You paid rent to DOE");
 	            	break ;
             }
+		}
+		if(k.getKeyCode() == KeyEvent.VK_5){
+			info.message("Here is some Info");
 		}
 	}
 
