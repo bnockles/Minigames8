@@ -29,13 +29,14 @@ public class MainMenu extends Screen implements KeyListener {
 		return this;
 	}
 
-
 	
-	public void paintScreen(Graphics2D g2) {
+	public void paintScreen(final Graphics2D g2) {
 		g2.setColor(Color.blue);
 		g2.fillRect(0,0,width,height);
 		g2.setColor(Color.white);
 		UtilityMethods.centerTextAtY(g2, "This will be the game menu where you can save/load data.", width, 50);
+		
+		
 	}
 
 	public void keyReleased(KeyEvent e) {

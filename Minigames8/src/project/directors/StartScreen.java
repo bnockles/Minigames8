@@ -22,7 +22,13 @@ public class StartScreen extends Screen implements KeyListener{
 		UtilityMethods.centerText(g2, "Press 1 to start", width, height/2);
 		UtilityMethods.centerText(g2, "Press 2 to see the rules screen", width, height);
 		UtilityMethods.centerText(g2, "Press 3 to see control help", width, (int)(height*1.5));
+		UtilityMethods.centerText(g2, "Press 4 to move your character (Demo only)", width, (int)(height*1.6));
 	}
+	
+	//MOCK's DEMO CODE
+//		InfoBox info = new InfoBox(50, 500, 100, 50) ;
+		Question question = new Question(this) ;
+		Alert alert = new Alert(this) ;
 
 	public void keyPressed(KeyEvent k)
 	{
@@ -39,6 +45,25 @@ public class StartScreen extends Screen implements KeyListener{
 		if(k.getKeyCode() == KeyEvent.VK_3){
 			Screen controlScreen = new ControlScreen(game);
 			game.setScreen(controlScreen);
+		}
+		if(k.getKeyCode() == KeyEvent.VK_4){
+			alert.message("Chen", "You Landed on the property Brooklyn Tech");
+            String[] options = {"Offer to purchase", "Battle for ownership", "Pay Rent"} ;
+            int n = question.Prompt("You landed on Brooklyn Tech. What would you like to do?", "Brooklyn Tech", options);
+            switch(n){
+	            case 0:
+	            	alert.message("Chen", "You offered DOE to buy Brooklyn Tech");
+	            	break ;
+	            case 1:
+	            	alert.message("Chen", "You started a battle with DOE for Brooklyn Tech");
+	            	break ;
+	            case 2:
+	            	alert.message("Chen", "You paid rent to DOE");
+	            	break ;
+            }
+		}
+		if(k.getKeyCode() == KeyEvent.VK_5){
+			info.message("Here is some Info");
 		}
 	}
 
