@@ -75,20 +75,31 @@ public class PlayerInfo extends GameSubTeamDemo {
 		return nextPlayer;
 	}
 
-	//Celina - wrote code to determine the winner
-
 	
-		public static void determineWin(){
+
+	//Celina - wrote code to determine the winner(determineWin())
+		public void determineWin(){
 			//puts score into an variable
-			int p1Score = Player.p1.getScore();
-			int p2Score = p2.getScore();
-			int p3Score = p3.getScore();
-			int p4Score = p4.getScore();
 			
-			String p1Name = p1.getName();
-			String p2Name =	p2.getName();
-			String p3Name = p3.getName();
-			String p4Name = p4.getName();
+//			int p1Score = p1.getScore();
+//			int p2Score = p2.getScore();
+//			int p3Score = p3.getScore();
+//			int p4Score = p4.getScore();
+			
+			int p1Score = players.get(0).getScore();
+			int p2Score = players.get(1).getScore();
+			int p3Score = players.get(2).getScore();
+			int p4Score = players.get(3).getScore();
+			
+//			String p1Name = p1.getName();
+//			String p2Name =	p2.getName();
+//			String p3Name = p3.getName();
+//			String p4Name = p4.getName();
+			
+			String p1Name = players.get(0).getName();
+			String p2Name =	players.get(1).getName();
+			String p3Name = players.get(2).getName();
+			String p4Name = players.get(3).getName();
 			
 			int scores[] = {p1Score, p2Score, p3Score, p4Score};
 			//sorts all the scores
