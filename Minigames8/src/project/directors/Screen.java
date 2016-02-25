@@ -1,5 +1,6 @@
 package project.directors;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -36,6 +37,9 @@ public abstract class Screen {
 	public void update()
 	{
 		Graphics2D g2 = (Graphics2D) screenImage.getGraphics();
+		g2.setColor(Color.white);
+		g2.fillRect(0, 0, width, height);
+		g2.setColor(Color.black);
 		paintScreen(g2) ;
 	}
 	

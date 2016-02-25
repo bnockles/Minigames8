@@ -1,5 +1,6 @@
 package project.gameDemo;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -27,13 +28,22 @@ public class PlayerInfo {
 		width = 500;
 		height = 150;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		update();
 	}
 	public BufferedImage getImage(){
 		return image;
 	}
 	public void paint(Graphics2D g){
-		//TODO write the paint method
-		g.drawString("This is painted.",20,20);
+		//repaint the background;
+		g.setColor(Color.blue);
+		g.fillRect(0, 0, width, height);
+		
+		g.setColor(Color.white);
+		int currentY= 60;
+		for(Player p: players){
+			g.drawString(p.getName()+" has a score of " +p.getScore(),20,currentY);
+			currentY+=20;
+		}
 	}
 	
 	public final void update(){
@@ -42,13 +52,24 @@ public class PlayerInfo {
 	}
 	
 	
+	/**example of something that can change while playing
+	 * 
+	 */
+	public void penalizeAllPlayers(int pointsToTakeAway){
+		for(Player p: players){
+			p.setScore(p.getScore()-pointsToTakeAway);
+		}
+		//update will change the graphics to show the new information
+		update();
+	}
+	
 	// carmen - we needa make sure that the player amount doesnt exceed 4
 
 	/**
 	 * Cindy - I made an arraylist of players so that we can add however many
 	 * players we need, for example, I made 1 player already
 	 **/
-
+	
 	public static void continueGame() {
 
 	}

@@ -17,28 +17,31 @@ import java.awt.image.BufferedImage;
 
 public class GameSubTeamScreen extends Screen implements KeyListener { 
 
-			
+
 	PlayerInfo playerBoxes;
+	int y;
 
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		playerBoxes = new PlayerInfo();
 		update();
-		// TODO Auto-generated constructor stub
+		y = 50;
 	}
 
 	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+		int k = arg0.getKeyCode();
+		if(k == KeyEvent.VK_P)playerBoxes.penalizeAllPlayers(10);
+		update();
 	}
 
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public KeyListener getKeyListener() {
@@ -47,21 +50,22 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	}
 
 	public void paintScreen(Graphics2D g2) {
-//		g2.setColor(Color.black);
-//		g2.drawString("This Demo is working!", 30, 75);
 		try{
-			g2.drawImage(playerBoxes.getImage(),50,50,null);
+			g2.setColor(Color.black);
+			g2.drawString("This Demo is working!", 30, 75);
+			y = (y+1)%500;
+			g2.drawImage(playerBoxes.getImage(),50,y,null);
+			playerBoxes.update();
 		}
 		catch (Exception e){
 			e.printStackTrace();
 		}
-		playerBoxes.update();
 		//Arik Commit test 
 	}
 
 	public static void time(int seconds) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

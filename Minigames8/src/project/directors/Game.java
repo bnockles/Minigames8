@@ -3,7 +3,11 @@ package project.directors;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 public class Game extends JFrame{
 
@@ -24,9 +28,17 @@ public class Game extends JFrame{
 		applySettings();//for JFrame-related methods
 		reset();//starts a game
 		setVisible(true);//makes the frame visible
+		Timer timer = new Timer(30, new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				activeScreen.update();
+				Game.this.repaint();
+			}
+		});
+		timer.start();
 	}
 
-	private void reset() {
+	public void reset() {
 		Screen startScreen = new StartScreen(this);
 		setScreen(startScreen);
 	}
