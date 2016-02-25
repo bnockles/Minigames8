@@ -1,6 +1,6 @@
 package project.gameDemo;
 
-//Cindy---completed player class 
+/** Cindy---completed player class **/
 public class Player {
 	private String name;
 	private String playerImg;
@@ -19,6 +19,14 @@ public class Player {
 		this.isVisible = isVisible;
 	}
 
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -30,7 +38,8 @@ public class Player {
 	public boolean getVisible() {
 		return isVisible;
 	}
-	public int getId(){
+
+	public int getId() {
 		return index;
 	}
 

@@ -4,15 +4,29 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class PlayerInfo extends GameSubTeamDemo {
+	ArrayList<Player> players;
+	int index;
+
+	public PlayerInfo() {
+		players = new ArrayList<Player>();
+		index = 0;
+		Player p1 = new Player("Player 1", "", true, 0);
+		Player p2 = new Player("Player 2", "", true, 1);
+		Player p3 = new Player("Player 3", "", true, 2);
+		Player p4 = new Player("Player 4", "", true, 3);
+		players.add(p1);
+		players.add(p2);
+		players.add(p3);
+		players.add(p4);
+
+	}
+
 	// carmen - we needa make sure that the player amount doesnt exceed 4
 
-	// Cindy - Carmen Playerinfo is used to change the player's stats and a
-	// player is suppose
-	// to be an object. So I am editing this class and making a Player class
-	// which can be used to
-	// make each individual players
-
-	
+	/**
+	 * Cindy - I made an arraylist of players so that we can add however many
+	 * players we need, for example, I made 1 player already
+	 **/
 
 	public static void continueGame() {
 
@@ -21,44 +35,49 @@ public class PlayerInfo extends GameSubTeamDemo {
 	public static void endGame() {
 
 	}
-	
-	
 
-	//Cindy - I made a arraylist of players and there is a keylistener to look for when
-	//player presses space bar and transitionturn is called when space par is pressed
-	//transitionturn goes to the next player's turn
-	ArrayList<Player> players = new ArrayList<Player>();
-	Player p1 = new Player("a", "", true, 0);
+	/**
+	 * Cindy - I made a arraylist of players and there is a keylistener to look
+	 * for when player presses space bar, when the player presses space bar then
+	 * there will be an random number from 1-100 that will be given to the
+	 * player as points.
+	 **/
 
 	public Player getPlayer() {
-		return p1;
+		return players.get(index);
+
 	}
 
 	public void keyPressed(KeyEvent ee) {
-		// Assuming that there is a pop up in graphics display
-		// calling upon graphics
-		// Also the timer reached 0 already showing the popup
 		if (ee.getKeyCode() == KeyEvent.VK_SPACE) {
-			transitionTurn();
+			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
+			getPlayer().setScore(randPoint);
 		}
 	}
 
+	/**
+	 * Cindy- transitionturn is called when timer has reached 0, then it goes to
+	 * the next player's turn
+	 **/
 	public Player transitionTurn() {
-		Player nextPlayer;
+
+		Player nextPlayer = null;
 		// there will be an array of the players with their information and a
-		// index desccrtinbing what their id is, assume arraylist is called
+		// index describing what their id is, assume arraylist is called
 		// players
 		if (getPlayer().getId() == players.size() - 1) {
-			nextPlayer = players.get(0);
+			determineWin();
 		} else {
 			nextPlayer = players.get(getPlayer().getId() + 1);
+			index++;
 		}
 		return nextPlayer;
 	}
 
-	
-	
-	
+	private void determineWin() {
+		// TODO Auto-generated method stub
+
+	}
 
 	// //implements chooseMinigame interface -- will pick the minigame that will
 	// be choosen
