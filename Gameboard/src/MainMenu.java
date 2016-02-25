@@ -4,11 +4,11 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 public class MainMenu extends Screen {
-	BufferedImage originalImage = ImageIO.read(new File(""));
 	
 	public MainMenu(Game game) {
 		super(game);
