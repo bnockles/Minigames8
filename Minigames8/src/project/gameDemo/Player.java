@@ -1,5 +1,6 @@
 package project.gameDemo;
 
+
 /** Cindy---completed player class **/
 public class Player {
 	private String name;

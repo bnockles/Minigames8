@@ -8,7 +8,7 @@ import java.awt.event.KeyListener;
 import project.directors.Game;
 import project.directors.Screen;
 
-public class GameDemoScreen extends Screen {
+public abstract class GameDemoScreen extends Screen {
   static int playerBoxH;
   static int playerBoxW;
   
