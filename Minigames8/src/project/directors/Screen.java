@@ -14,6 +14,8 @@ public abstract class Screen extends JFrame {
 	int width;
 	int height;
 	
+	
+	
 	//Game is a parameter here so that every screen can control the game while it is active
 	public Screen(Game game) {
 		this.game = game;
@@ -22,6 +24,7 @@ public abstract class Screen extends JFrame {
 		screenImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g2 = (Graphics2D)screenImage.getGraphics();
 		paintScreen(g2);
+		
 	}
 	
 	//returns the image of this screen (to be painted in the Game JFrame)

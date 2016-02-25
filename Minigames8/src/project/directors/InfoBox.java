@@ -31,7 +31,7 @@ public class InfoBox extends JPanel {
 	    int fontSize = 20;
 	    String info = "" ;
 	    g.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
-	    g.setColor(Color.blue);
+	    g.setColor(Color.green);
 	    g.fillRect(x, y, width, height) ;
 	    
 	    
