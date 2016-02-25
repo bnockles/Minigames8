@@ -27,8 +27,8 @@ public class StartScreen extends Screen implements KeyListener{
 	
 	//MOCK's DEMO CODE
 //		InfoBox info = new InfoBox(50, 500, 100, 50) ;
-		Question question = new Question(this) ;
-		Alert alert = new Alert(this) ;
+		Question question = new Question(game) ;
+		Alert alert = new Alert(game) ;
 
 	public void keyPressed(KeyEvent k)
 	{
@@ -64,6 +64,7 @@ public class StartScreen extends Screen implements KeyListener{
 		}
 		if(k.getKeyCode() == KeyEvent.VK_5){
 			info.message("Here is some Info");
+			update() ;
 		}
 	}
 

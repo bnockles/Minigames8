@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
-public abstract class Screen extends JFrame {
+public abstract class Screen {
 
 	Game game;
 	BufferedImage screenImage;
@@ -33,6 +33,11 @@ public abstract class Screen extends JFrame {
 		return screenImage;
 	}
 	
+	public void update()
+	{
+		Graphics2D g2 = (Graphics2D) screenImage.getGraphics();
+		paintScreen(g2) ;
+	}
 	
 	//I don't care how people implement this method,
 	//so I made it abstract

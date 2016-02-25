@@ -50,7 +50,7 @@ public class InfoBox extends JFrame {
 	public void message(String newInfo)
 	{
 		info = newInfo ;
-		repaint() ;
+		//repaint() ;
 	}
 	//main is for testing
 	public static void main(String[] args) {
