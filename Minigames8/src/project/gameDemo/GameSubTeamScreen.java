@@ -21,7 +21,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	Player goombay;
 	Player toady;
 			
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
 		
 		//Carmen and Radhika - Trying to display characters and playerinfo
 //		new GameSubTeamScreen(String name, String playerImg, boolean isVisible, int id);
@@ -33,7 +33,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 //		goombay = new Player("Player 3", "images/Characters/goomba.png", "true", "0");
 //		toady = new Player("Player 4", "images/Characters/toad.png", "true", "0");
 //		}
-	}
+//	}
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		// TODO Auto-generated constructor stub
