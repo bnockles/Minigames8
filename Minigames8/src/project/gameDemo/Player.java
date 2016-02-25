@@ -1,13 +1,12 @@
 package project.gameDemo;
 
-
 /** Cindy---completed player class **/
 public class Player {
-	private String name;
-	private String playerImg;
-	boolean isVisible;
-	int index;
-	int score;
+	static  String name;
+	static String playerImg;
+	static boolean isVisible;
+	static int index;
+	static int score;
 
 	public Player(String name, String playerImg, boolean isVisible, int id) {
 		this.name = name;
