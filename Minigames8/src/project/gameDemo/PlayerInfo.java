@@ -53,6 +53,7 @@ public class PlayerInfo extends GameSubTeamDemo {
 		if (ee.getKeyCode() == KeyEvent.VK_SPACE) {
 			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
 			getPlayer().setScore(randPoint);
+			transitionTurn();
 		}
 	}
 
