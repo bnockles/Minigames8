@@ -65,4 +65,9 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 		//Arik Commit test 
 	}
 
+	public static void time(int seconds) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
