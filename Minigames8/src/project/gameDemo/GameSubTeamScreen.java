@@ -39,6 +39,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 		// TODO Auto-generated method stub
 		g2.setColor(Color.black);
 		g2.drawString("This Demo is working!", 30, 75);
+		//Arik Commit test 
 	}
 
 }
