@@ -5,11 +5,13 @@ package project.directors;
 
 import java.awt.*;
 
+import javax.swing.JFrame;
+
 /**
  * @author Matyas Fenyves
  *
  */
-public class InfoBox {
+public class InfoBox extends JFrame {
 	
 //	public static String info = "hello" ;
 	public static int x ;
@@ -48,7 +50,7 @@ public class InfoBox {
 	public void message(String newInfo)
 	{
 		info = newInfo ;
-		paint(g) ;
+		repaint() ;
 	}
 	//main is for testing
 	public static void main(String[] args) {
