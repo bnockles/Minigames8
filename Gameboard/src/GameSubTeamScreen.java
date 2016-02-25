@@ -1,4 +1,3 @@
-package project.gameDemo;
 
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -6,8 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import project.directors.Game;
-import project.directors.Screen;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,13 +15,8 @@ import java.awt.image.BufferedImage;
 
 public class GameSubTeamScreen extends Screen implements KeyListener { 
 
-			
-	PlayerInfo playerBoxes;
-
 	public GameSubTeamScreen(Game game) {
 		super(game);
-		playerBoxes = new PlayerInfo();
-		update();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -43,19 +36,13 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 
 	public KeyListener getKeyListener() {
 		// TODO Auto-generated method stub
-		return this;
+		return null;
 	}
 
 	public void paintScreen(Graphics2D g2) {
-//		g2.setColor(Color.black);
-//		g2.drawString("This Demo is working!", 30, 75);
-		try{
-			g2.drawImage(playerBoxes.getImage(),50,50,null);
-		}
-		catch (Exception e){
-			e.printStackTrace();
-		}
-		playerBoxes.update();
+		// TODO Auto-generated method stub
+		g2.setColor(Color.black);
+		g2.drawString("This Demo is working!", 30, 75);
 		//Arik Commit test 
 	}
 

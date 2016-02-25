@@ -1,23 +1,17 @@
-package project.directors;
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 
 public class Game extends JFrame{
 
-	/**
-	 * 
-	 */
-	static Game game ;
-	private static final long serialVersionUID = 1L;
 	Screen activeScreen;//the screen that is currently showing;
 	int width;
 	int height;
 	
 	public static void main(String[] args) {
-		game = new Game();
+		new Game();
 	}
 
 	public Game() {
@@ -52,15 +46,10 @@ public class Game extends JFrame{
 		setUndecorated(false);
 		
 	}
-	
-	
-	
-	public void paint(final Graphics g){
-		
+
+	public void paint(Graphics g){
 		g.drawImage(activeScreen.getScreenImage(), 0, 0, null);
 	}
-	
-	
 	
 	public int getWidth() {
 		return width;
@@ -69,7 +58,6 @@ public class Game extends JFrame{
 	public int getHeight() {
 		return height;
 	}
-
 	
 	
 	

@@ -1,4 +1,3 @@
-package project.directors;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
@@ -16,5 +15,4 @@ public class UtilityMethods {
 		int x = (areaWidth-fm.stringWidth(text))/2;
 		g2.drawString(text, x, y);
 	}
-	
 }

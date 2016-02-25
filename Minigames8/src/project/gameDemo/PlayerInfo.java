@@ -1,13 +1,18 @@
 package project.gameDemo;
 
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PlayerInfo extends GameSubTeamDemo {
+public class PlayerInfo {
 	ArrayList<Player> players;
 	int index;
-
+	BufferedImage image;
+	int width ;
+	int height;
+	
 	public PlayerInfo() {
 		players = new ArrayList<Player>();
 		index = 0;
@@ -19,9 +24,24 @@ public class PlayerInfo extends GameSubTeamDemo {
 		players.add(p2);
 		players.add(p3);
 		players.add(p4);
-
+		width = 500;
+		height = 150;
+		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 	}
-
+	public BufferedImage getImage(){
+		return image;
+	}
+	public void paint(Graphics2D g){
+		//TODO write the paint method
+		g.drawString("This is painted.",20,20);
+	}
+	
+	public final void update(){
+	    Graphics2D g2 = (Graphics2D)image.getGraphics();
+	    paint(g2);
+	}
+	
+	
 	// carmen - we needa make sure that the player amount doesnt exceed 4
 
 	/**

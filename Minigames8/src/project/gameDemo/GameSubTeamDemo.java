@@ -1,12 +1,16 @@
 package project.gameDemo;
-import java.util.Scanner;
 import project.directors.Game;
-import project.directors.Screen;
+
 
 public class GameSubTeamDemo extends Game {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3663230504773952092L;
+
 	public static void main(String[] args) {
-		GameSubTeamDemo x = new GameSubTeamDemo();
+		new GameSubTeamDemo();
 		
 	}
 	public GameSubTeamDemo(){
