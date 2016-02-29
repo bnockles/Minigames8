@@ -1,14 +1,28 @@
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 
 public class Player {
 	String name;
 	int currency;
 	String imageSrc;
+	int height;
+	int width;
+	int position;
+	String imageLoc;
+	BufferedImage playerImage;
 	
 	//Amount given to players at start of game
 	int startingAmount = 150;
 	boolean playing;
+	int defHeight = 160;
+	int defWidth = 160;
+	int startingPosition = 0;
+	int playerNum = 0;
 	
 	//ArrayList of order of turns
 	static ArrayList<Player> playOrder = new  ArrayList<Player>();
@@ -22,6 +36,16 @@ public class Player {
 		this.name = playerName;
 		this.currency = startingAmount;
 		this.imageSrc=playerImageSrc;
+		this.height = defHeight;
+		this.width = defWidth;
+		this.position = startingPosition;
+		this.playerImage = null;
+		try{
+		URL url = getClass().getResource(imageSrc); 
+		this.playerImage = ImageIO.read(url);
+		}catch(Exception e){
+		e.printStackTrace();
+		}		
 	}
 	/*********** END CONTSRUCTOR  **************/
 
@@ -70,4 +94,10 @@ public class Player {
 		return this.playing;
 	}
 	/******** END GETTERS AND SETTERS ******************/
+	public BufferedImage getPlayerImage() {
+		return playerImage;
+	}
+	public void setPlayerImage(BufferedImage playerImage) {
+		this.playerImage = playerImage;
+	}
 }

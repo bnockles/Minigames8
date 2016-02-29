@@ -1,3 +1,4 @@
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
@@ -37,8 +38,8 @@ public class Game extends JFrame{
 	private void applySettings() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		//dimensions for the game (can change freely):
-		width = 1000;
-		height = 800;
+		width = 320;
+		height = 320;
 		//for JFrame
 		setSize(width,height);
 		setLocation((int)(screenSize.getWidth()-width)/2, (int)(screenSize.getHeight()-height)/2);

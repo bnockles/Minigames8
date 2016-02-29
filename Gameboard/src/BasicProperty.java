@@ -1,4 +1,3 @@
-
 public class BasicProperty extends Property {
 		//Fields
 		int initialPrice;
