@@ -44,6 +44,7 @@ public class PlayerInfo {
 			g.drawString(p.getName()+" has a score of " +p.getScore(),20,currentY);
 			currentY+=20;
 		}
+		g.drawString(determineWin().getName()+" is the winner. ",20,currentY);
 	}
 	
 	public final void update(){
@@ -94,13 +95,13 @@ public class PlayerInfo {
 		return players;
 	}
 
-	public void keyPressed(KeyEvent ee) {
-		if (ee.getKeyCode() == KeyEvent.VK_SPACE) {
-			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
-			getPlayer().setScore(randPoint);
-			transitionTurn();
-		}
-	}
+//	public void keyPressed(KeyEvent ee) {
+//		if (ee.getKeyCode() == KeyEvent.VK_SPACE) {
+//			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
+//			getPlayer().setScore(randPoint);
+//			transitionTurn();
+//		}
+//	}
 
 	/**
 	 * Cindy- transitionturn is called when timer has reached 0, then it goes to
@@ -124,9 +125,9 @@ public class PlayerInfo {
 	
 
 	//Celina - wrote code to determine the winner(determineWin())
-		public void determineWin(){
+		public Player determineWin(){
 			//puts score into an variable
-			
+			Player winner = null;
 //			int p1Score = p1.getScore();
 //			int p2Score = p2.getScore();
 //			int p3Score = p3.getScore();
@@ -142,10 +143,7 @@ public class PlayerInfo {
 //			String p3Name = p3.getName();
 //			String p4Name = p4.getName();
 			
-			String p1Name = players.get(0).getName();
-			String p2Name =	players.get(1).getName();
-			String p3Name = players.get(2).getName();
-			String p4Name = players.get(3).getName();
+		
 			
 			int scores[] = {p1Score, p2Score, p3Score, p4Score};
 			//sorts all the scores
@@ -155,17 +153,17 @@ public class PlayerInfo {
 			
 			//display winner
 			if(p1Score == winScore){
-				System.out.println(p1Name + " won!");
+				winner = players.get(0);
 			}else if(p2Score == winScore){
-				System.out.println(p2Name + " won!");
+				winner = players.get(1);
 			}else if(p3Score == winScore){
-				System.out.println(p3Name + " won!");
+				winner = players.get(2);
 			}else if(p4Score == winScore){
-				System.out.println(p4Name + " won!");
+				winner = players.get(3);
 			}
 			
 			
-			
+			return winner;
 		}
 
 	// //implements chooseMinigame interface -- will pick the minigame that will

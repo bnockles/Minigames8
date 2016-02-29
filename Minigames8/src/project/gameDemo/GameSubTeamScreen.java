@@ -31,6 +31,11 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	public void keyPressed(KeyEvent arg0) {
 		int k = arg0.getKeyCode();
 		if(k == KeyEvent.VK_P)playerBoxes.penalizeAllPlayers(10);
+		if(k == KeyEvent.VK_SPACE){
+			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
+			playerBoxes.getPlayer().setScore(randPoint);
+			playerBoxes.transitionTurn();
+		}
 		update();
 	}
 
