@@ -42,6 +42,7 @@ public class PlayerInfo {
 		int currentY= 60;
 		for(Player p: players){
 			g.drawString(p.getName()+" has a score of " +p.getScore(),20,currentY);
+			g.drawImage(p.getIcon(), 200, currentY, null);
 			currentY+=20;
 		}
 		g.drawString(determineWin().getName()+" is the winner. ",20,currentY);
