@@ -28,10 +28,11 @@ public class PlayerInfo {
 		players.add(p2);
 		players.add(p3);
 		players.add(p4);
-		width = 1000;
+		width = 850;
 		height = 500;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-//		image = UtilityMethods.getScaledImage(players,100,100);
+//		 BufferedImage origimage0 = UtilityMethods.getImageFromFile(this, "/images/Characters/toad.png");
+//	image = UtilityMethods.getScaledImage(players,100,100);
 		update();
 	}
 	public BufferedImage getImage(){
@@ -44,6 +45,7 @@ public class PlayerInfo {
 		
 		g.setColor(Color.white);
 		int currentY= 60;
+		
 		for(Player p: players){
 			g.drawString(p.getName()+" has a score of " +p.getScore(),20,currentY);
 			g.drawImage(p.getIcon(), 200, currentY, null);

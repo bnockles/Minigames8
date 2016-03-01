@@ -58,8 +58,8 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 		try{
 			g2.setColor(Color.black);
 			g2.drawString("This Demo is working!", 30, 75);
-			y = (y+1)%500;
-			g2.drawImage(playerBoxes.getImage(),50,y,null);
+//			y = (y+1)%500;
+			g2.drawImage(playerBoxes.getImage(),50,300,null);
 			playerBoxes.update();
 		}
 		catch (Exception e){
