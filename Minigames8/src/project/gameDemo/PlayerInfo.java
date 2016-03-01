@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import project.directors.UtilityMethods;
+
 public class PlayerInfo {
 	ArrayList<Player> players;
 	int index;
@@ -21,13 +23,15 @@ public class PlayerInfo {
 		Player p2 = new Player("Player 2", "/images/Characters/boo.png", true, 1);
 		Player p3 = new Player("Player 3", "/images/Characters/goomba.png", true, 2);
 		Player p4 = new Player("Player 4", "/images/Characters/mario.png", true, 3);
+		
 		players.add(p1);
 		players.add(p2);
 		players.add(p3);
 		players.add(p4);
-		width = 500;
-		height = 150;
+		width = 1000;
+		height = 500;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+//		image = UtilityMethods.getScaledImage(players,100,100);
 		update();
 	}
 	public BufferedImage getImage(){
