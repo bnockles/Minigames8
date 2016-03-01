@@ -1,44 +1,26 @@
-package project.directors;
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
-import javax.swing.Timer;
 
 public class Game extends JFrame{
 
-	/**
-	 * 
-	 */
-	static Game game ;
-	private static final long serialVersionUID = 1L;
 	Screen activeScreen;//the screen that is currently showing;
 	int width;
 	int height;
 	
 	public static void main(String[] args) {
-		game = new Game();
+		new Game();
 	}
 
 	public Game() {
 		applySettings();//for JFrame-related methods
 		reset();//starts a game
 		setVisible(true);//makes the frame visible
-		Timer timer = new Timer(30, new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				activeScreen.update();
-				Game.this.repaint();
-			}
-		});
-		timer.start();
 	}
 
-	public void reset() {
+	private void reset() {
 		Screen startScreen = new StartScreen(this);
 		setScreen(startScreen);
 	}
@@ -64,15 +46,10 @@ public class Game extends JFrame{
 		setUndecorated(false);
 		
 	}
-	
-	
-	
-	public void paint(final Graphics g){
-		
+
+	public void paint(Graphics g){
 		g.drawImage(activeScreen.getScreenImage(), 0, 0, null);
 	}
-	
-	
 	
 	public int getWidth() {
 		return width;
@@ -81,7 +58,6 @@ public class Game extends JFrame{
 	public int getHeight() {
 		return height;
 	}
-
 	
 	
 	

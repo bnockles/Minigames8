@@ -1,7 +1,35 @@
 package project.menus;
 
-public class GameMenu {
-	public GameMenu(){
+import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import project.directors.*;
+
+
+public class GameMenu extends Screen{
+	
+	public GameMenu(Game game){
+		super(game);
+	}
+	
+	public void keyPressed(KeyEvent k)
+	{
+		/**if(k.getKeyCode() == KeyEvent.VK_ESCAPE){
+			
+			Screen startScreen = new StartScreen(game);
+			
+			game.setScreen(startScreen);
+		}**/
+	}
+
+	public KeyListener getKeyListener() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void paintScreen(Graphics2D g2) {
+		// TODO Auto-generated method stub
 		
 	}
 }

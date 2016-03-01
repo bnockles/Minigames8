@@ -1,9 +1,6 @@
-package project.directors;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.image.BufferedImage;
 
 public class UtilityMethods {
 	
@@ -18,15 +15,4 @@ public class UtilityMethods {
 		int x = (areaWidth-fm.stringWidth(text))/2;
 		g2.drawString(text, x, y);
 	}
-	
-	public static void scaleImage(Graphics2D g2,BufferedImage originalImage, int x, int y, int newWidth, int newHeight){
-		
-		int w = originalImage.getWidth();
-		int h = originalImage.getHeight();
-		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g2.drawImage(originalImage, x, y, x+newWidth,y+newHeight, 0, 0, w, h, null);
-
-
-	}
-
 }
