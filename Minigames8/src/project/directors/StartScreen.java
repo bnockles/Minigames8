@@ -5,6 +5,10 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import project.menus.ControlScreen;
+import project.menus.MainMenu;
+import project.menus.RuleMenu;
+
 public class StartScreen extends Screen implements KeyListener{
 
 	public StartScreen(Game game) {
@@ -38,7 +42,7 @@ public class StartScreen extends Screen implements KeyListener{
 			game.setScreen(mainMenu);
 		}
 		if(k.getKeyCode() == KeyEvent.VK_2){
-			Screen ruleScreen = new RuleScreen(game);
+			Screen ruleScreen = new RuleMenu(game);
 			game.setScreen(ruleScreen);
 		}
 		
@@ -64,7 +68,7 @@ public class StartScreen extends Screen implements KeyListener{
 		}
 		if(k.getKeyCode() == KeyEvent.VK_5){
 			info.message("Here is some Info");
-			update() ;
+			repaint() ;
 		}
 	}
 

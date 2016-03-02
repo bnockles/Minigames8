@@ -1,13 +1,18 @@
-package project.directors;
+package project.menus;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class RuleScreen extends Screen implements KeyListener {
+import project.directors.Game;
+import project.directors.Screen;
+import project.directors.StartScreen;
+import project.directors.UtilityMethods;
 
-	public RuleScreen(Game game) {
+public class RuleMenu extends Screen implements KeyListener {
+
+	public RuleMenu(Game game) {
 		super(game);
 		// TODO Auto-generated constructor stub
 	}

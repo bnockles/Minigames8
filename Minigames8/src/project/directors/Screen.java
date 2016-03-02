@@ -6,13 +6,13 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
-public abstract class Screen {
+public abstract class Screen extends JFrame{
 
-	Game game;
+	protected Game game;
 	BufferedImage screenImage;
 	KeyListener keyListener;
-	int width;
-	int height;
+	protected int width;
+	protected int height;
 	InfoBox info ;
 	
 	

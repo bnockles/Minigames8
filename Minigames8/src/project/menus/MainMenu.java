@@ -1,11 +1,14 @@
-package project.directors;
+package project.menus;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import project.menus.GameMenu;
+import project.directors.Game;
+import project.directors.Screen;
+import project.directors.StartScreen;
+import project.directors.UtilityMethods;
 
 public class MainMenu extends Screen implements KeyListener {
 	
