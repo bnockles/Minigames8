@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import project.menus.ControlScreen;
+import project.menus.ControlMenu;
 import project.menus.MainMenu;
 import project.menus.RuleMenu;
 
@@ -47,7 +47,7 @@ public class StartScreen extends Screen implements KeyListener{
 		}
 		
 		if(k.getKeyCode() == KeyEvent.VK_3){
-			Screen controlScreen = new ControlScreen(game);
+			Screen controlScreen = new ControlMenu(game);
 			game.setScreen(controlScreen);
 		}
 		if(k.getKeyCode() == KeyEvent.VK_4){

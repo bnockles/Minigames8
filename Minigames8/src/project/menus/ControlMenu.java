@@ -10,14 +10,14 @@ import project.directors.Screen;
 import project.directors.StartScreen;
 import project.directors.UtilityMethods;
 
-public class ControlScreen extends Screen implements KeyListener {
+public class ControlMenu extends Screen implements KeyListener {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ControlScreen(Game game) {
+	public ControlMenu(Game game) {
 		super(game);
 		// TODO Auto-generated constructor stub
 	}
