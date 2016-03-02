@@ -43,18 +43,16 @@ public class PlayerInfo {
 		g.setColor(Color.black);
 		g.fillRect(0, 0, width, height);
 
-		
 		g.setColor(Color.white);
 		int currentY= 60;
 		int currentX = 50;
 		
 		for(Player p: players){
-			
-			g.drawString(p.getName(),20,currentY);
-			g.drawString("Score:" + p.getScore(), 20, currentY+20);
+			g.drawString(p.getName(),50,currentY);
+			g.drawString("Score: " + p.getScore(), 50, currentY+20);
 			double scaleFactor = (double)50/p.getIcon().getHeight();
-			UtilityMethods.scaleImage(g,p.getIcon(),50,currentY,(int) (p.getIcon().getWidth()*scaleFactor),50);
-			currentY+=60;
+			UtilityMethods.scaleImage(g,p.getIcon(),20,currentY+20,(int) (p.getIcon().getWidth()*scaleFactor),50);
+			currentY+=100;
 		}
 		g.drawString(determineWin().getName()+" is the winner. ",20,currentY);
 	}
