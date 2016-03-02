@@ -10,7 +10,22 @@ public class GameBoard {
 	 * allBasicPropertiesInfo.get(1) = description;
 	 * allBasicPropertiesInfo.get(2) = initialPrice;
 	 */
-	static ArrayList<ArrayList<String>> allBasicPropertiesInfo = new ArrayList<ArrayList<String>>();
+	static String[][] allBasicPropertiesInfo ={{"Unknown","A mysterious pokemon that nobody knows about. ","100"},
+												{"Venasaur", "A leaf lizard thing that looks cool","115"},
+												{"Megaton","Another lizard pokemon that looks cool","130"},
+												{"UnKnown","This Pokemon seems to be in the shape of an eight, but then again all Unknown are...","150"},
+												{"Sceptile","Marijuana looking Pokemon","165"},
+												{"","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												};
 	
 	/**
 	 * allChanceCardPropertiesInfo.get(0) = name;
@@ -22,6 +37,11 @@ public class GameBoard {
 	
 	public static void main(String[] args) {
 		genPlayers(4);
+		for(int i = 0;i<allBasicPropertiesInfo.length;i++){
+			for(int j=0;j<allBasicPropertiesInfo[i].length;j++){
+				System.out.println(allBasicPropertiesInfo[i][j]);
+			}
+		}
 		/*
 		generateBoard();
 		displayGameBoard();
@@ -41,8 +61,8 @@ public class GameBoard {
 	}
 
 	public static void generateAllBasicProperties() {
-			for(int i=0;i<allBasicPropertiesInfo.get(0).size();i++){
-				new BasicProperty(allBasicPropertiesInfo.get(i).get(0),allBasicPropertiesInfo.get(i).get(1),Integer.parseInt(allBasicPropertiesInfo.get(i).get(2)));
+			for(int i=0;i<allBasicPropertiesInfo[0].length;i++){
+				new BasicProperty(allBasicPropertiesInfo[i][0],allBasicPropertiesInfo[i][1],Integer.parseInt(allBasicPropertiesInfo[i][2]));
 			}
 	}
 	
