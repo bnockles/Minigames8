@@ -32,7 +32,7 @@ public class PlayerInfo {
 		height = 500;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		
-//	image = UtilityMethods.scaleImage(players,100,100);
+		
 		update();
 	}
 	public BufferedImage getImage(){
@@ -40,16 +40,21 @@ public class PlayerInfo {
 	}
 	public void paint(Graphics2D g){
 		//repaint the background;
-		g.setColor(Color.blue);
+		g.setColor(Color.black);
 		g.fillRect(0, 0, width, height);
+
 		
 		g.setColor(Color.white);
 		int currentY= 60;
+		int currentX = 50;
 		
 		for(Player p: players){
-			g.drawString(p.getName()+" has a score of " +p.getScore(),20,currentY);
-			g.drawImage(p.getIcon(), 200, currentY, null);
-			currentY+=20;
+			
+			g.drawString(p.getName(),20,currentY);
+			g.drawString("Score:" + p.getScore(), 20, currentY+20);
+			double scaleFactor = (double)50/p.getIcon().getHeight();
+			UtilityMethods.scaleImage(g,p.getIcon(),50,currentY,(int) (p.getIcon().getWidth()*scaleFactor),50);
+			currentY+=60;
 		}
 		g.drawString(determineWin().getName()+" is the winner. ",20,currentY);
 	}
@@ -77,14 +82,6 @@ public class PlayerInfo {
 	 * Cindy - I made an arraylist of players so that we can add however many
 	 * players we need, for example, I made 1 player already
 	 **/
-	
-	public static void continueGame() {
-
-	}
-
-	public static void endGame() {
-
-	}
 
 	/**
 	 * Cindy - I made a arraylist of players and there is a keylistener to look

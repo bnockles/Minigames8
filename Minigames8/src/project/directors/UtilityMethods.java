@@ -25,5 +25,8 @@ public class UtilityMethods {
 		int h = originalImage.getHeight();
 		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 		g2.drawImage(originalImage, x, y, x+newWidth,y+newHeight, 0, 0, w, h, null);
+		//For this to work you have to pass the Graphics2D instance that you want to paint the method. 
+		//This would meand the Graphics2D (called 'g') in your PlayerInfo paint method You also pass the image, 
+		//the corrdinates, and the desired width and height of the result
 	}
 }

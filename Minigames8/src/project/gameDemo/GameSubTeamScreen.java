@@ -55,6 +55,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	}
 
 	public void paintScreen(Graphics2D g2) {
+		
 		try{
 			g2.setColor(Color.black);
 			g2.drawString("This Demo is working!", 30, 75);
