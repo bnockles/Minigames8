@@ -32,15 +32,6 @@ public class GameBoard {
 	public static void generateBoard() {
 		generateAllBasicProperties();
 		generateAllChanceCardProperties();
-		generateAllOtherProperties();	
-	}
-
-	public static void displayGameBoard() {
-		//TO BE  WRITTEN
-	}
-
-	public static void generateAllOtherProperties() {
-		
 	}
 
 	public static void generateAllChanceCardProperties() {

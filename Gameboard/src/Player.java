@@ -25,13 +25,13 @@ public class Player {
 	int startingPosition = 0;
 	int playerNum = 0;
 	
-	//ArrayList of order of turns
+	//Turn Order
 	static ArrayList<Player> playOrder = new  ArrayList<Player>();
 	
 	//ArrayList of player Ranking (1st,2nd,3rd,4th)
 	static ArrayList<Player> playerRanking = new  ArrayList<Player>();
 
-	/*********** CONSTRUCTOR *******************/
+
 	public Player(String playerName,String playerImageSrc){
 		this.playing = true;
 		this.name = playerName;
@@ -48,20 +48,16 @@ public class Player {
 		e.printStackTrace();
 		}		
 	}
-	/*********** END CONTSRUCTOR  **************/
+
 
 	
 	public ArrayList<Player> generateRandomPlayerOrder(){
-		//Creates temporary ArrayList for use later and ArrayList to be returned
+		
 		ArrayList<Player> minigameOrder = new ArrayList<Player>();
 		ArrayList<Player> tempArrayList = playOrder;
-		
-		//While returned ArrayList is less then all players currently in game
+	
 		while(minigameOrder.size() < tempArrayList.size()){
-			//Random player order
 			int playerToAdd = (int)(Math.random()* tempArrayList.size());
-			
-			//Moves Player from tempArray to returned ArrayList
 			minigameOrder.add(tempArrayList.get(playerToAdd));
 			tempArrayList.remove(playerToAdd);
 		}
@@ -94,7 +90,6 @@ public class Player {
 	public boolean getPlaying(){
 		return this.playing;
 	}
-	/******** END GETTERS AND SETTERS ******************/
 	public BufferedImage getPlayerImage() {
 		return playerImage;
 	}

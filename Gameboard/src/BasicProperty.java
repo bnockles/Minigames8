@@ -30,8 +30,8 @@ public class BasicProperty extends Property {
 				this.owner.properties.remove(this);
 				buyer.properties.add(this);
 				//Exchanges currency
-				this.owner.currency+=price;
-				buyer.currency-=price;
+				this.owner.setCurrency(this.owner.getCurrency()+price);
+				buyer.setCurrency(buyer.getCurrency()-price);
 			}
 		}
 		
