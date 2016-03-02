@@ -54,6 +54,7 @@ public class PlayerInfo {
 			UtilityMethods.scaleImage(g,p.getIcon(),20,currentY+20,(int) (p.getIcon().getWidth()*scaleFactor),50);
 			currentY+=100;
 		}
+		if(getPlayer().getId() == players.size() - 1)
 		g.drawString(determineWin().getName()+" is the winner. ",20,currentY);
 	}
 	
@@ -116,7 +117,7 @@ public class PlayerInfo {
 		// index describing what their id is, assume arraylist is called
 		// players
 		if (getPlayer().getId() == players.size() - 1) {
-			determineWin();
+			
 		} else {
 			nextPlayer = players.get(getPlayer().getId() + 1);
 			index++;
