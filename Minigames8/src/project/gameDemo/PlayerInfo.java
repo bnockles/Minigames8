@@ -31,8 +31,8 @@ public class PlayerInfo {
 		width = 850;
 		height = 500;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-//		 BufferedImage origimage0 = UtilityMethods.getImageFromFile(this, "/images/Characters/toad.png");
-//	image = UtilityMethods.getScaledImage(players,100,100);
+		
+//	image = UtilityMethods.scaleImage(players,100,100);
 		update();
 	}
 	public BufferedImage getImage(){
@@ -71,7 +71,7 @@ public class PlayerInfo {
 		update();
 	}
 	
-	// carmen - we needa make sure that the player amount doesnt exceed 4
+
 
 	/**
 	 * Cindy - I made an arraylist of players so that we can add however many

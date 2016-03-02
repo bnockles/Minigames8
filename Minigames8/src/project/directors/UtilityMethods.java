@@ -25,8 +25,5 @@ public class UtilityMethods {
 		int h = originalImage.getHeight();
 		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 		g2.drawImage(originalImage, x, y, x+newWidth,y+newHeight, 0, 0, w, h, null);
-
-
 	}
-
 }
