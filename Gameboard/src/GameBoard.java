@@ -10,19 +10,20 @@ public class GameBoard {
 	 * allBasicPropertiesInfo.get(1) = description;
 	 * allBasicPropertiesInfo.get(2) = initialPrice;
 	 */
-	static String[][] allBasicPropertiesInfo ={{"Unknown","A mysterious pokemon that nobody knows about. ","100"},
+	static String[][] allBasicPropertiesInfo ={//Unknown
 												{"Venasaur", "A leaf lizard thing that looks cool","115"},
 												{"Megaton","Another lizard pokemon that looks cool","130"},
-												{"UnKnown","This Pokemon seems to be in the shape of an eight, but then again all Unknown are...","150"},
-												{"Sceptile","Marijuana looking Pokemon","165"},
-												{"","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
-												{"Megaton","Another lizrad pokemon that looks cool","130"},
+												//Unknown
+												{"Sceptile","Marijuana looking Pokemon","145"},
+												//Lottery
+												{"Blastoise","Blue Turtle Pokemon","170"},
+												//Circle unknown
+												//Unknown
+												{"Feraligator","It's a blue aligator, very creative","185"},
+												{"Swampert","Who knows what this is?","200"},
+												{"Charizard","Fire breathing dragon, as if there's another type of dragon","225"},
+												{"Typhlosion","A badger thing fire","240"},
+												{"Blazeiken","Fire kicking badass","255"},
 												{"Megaton","Another lizrad pokemon that looks cool","130"},
 												{"Megaton","Another lizrad pokemon that looks cool","130"},
 												};
