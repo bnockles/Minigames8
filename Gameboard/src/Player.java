@@ -13,6 +13,7 @@ public class Player {
 	int height;
 	int width;
 	int position;
+	ArrayList<BasicProperty> properties;
 	String imageLoc;
 	BufferedImage playerImage;
 	

@@ -1,5 +1,5 @@
 
-public class Moveable {
-	public void move();
+public interface Moveable {
+	 void move();
 	
 }

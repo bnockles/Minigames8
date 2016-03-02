@@ -1,8 +1,7 @@
 public class BasicProperty extends Property {
-		//Fields
-		int initialPrice;
-		int currentPrice;
-		Player owner;
+		private int initialPrice;
+		private int currentPrice;
+		private Player owner;
 		
 		/*********** Constructor ***********************/
 		public BasicProperty(String propertyName, String propertyDescription,int initialPrice) {
@@ -22,15 +21,20 @@ public class BasicProperty extends Property {
 		public void setCurrentPrice(int newPrice){
 			this.currentPrice = newPrice;
 		}
-
-		
 		/*********** Methods required by BUYABLE interface ****/
-		public void buy(){
-			
+		public void buy(BasicProperty property,Player buyer ,int price){
+			if(buyer.currency<price){
+				//Displays pop-up cannot buy
+			}else{
+				//Exchanges property
+				this.owner.properties.remove(this);
+				buyer.properties.add(this);
+				//Exchanges currency
+				this.owner.currency+=price;
+				buyer.currency-=price;
+			}
 		}
-		public void sell(){
-			
-		}
+		
 		public void resetToInitialPrice(){
 			this.currentPrice = this.initialPrice;
 		}

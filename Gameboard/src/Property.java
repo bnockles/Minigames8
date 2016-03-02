@@ -1,7 +1,7 @@
 
 public class Property {
-	String name;
-	String description;
+	protected String name;
+	protected String description;
 
 	/********Constructor ******************/
 	public Property(String propertyName, String propertyDescription) {
@@ -15,15 +15,8 @@ public class Property {
 	public String getName(){
 		return this.name;
 	}
-	public void setName(String newName){
-		this.name=newName;
-	}
-	
 	public String getDescription(){
 		return this.description;
-	}
-	public void setDescription(String newDescription){
-		this.description = newDescription;
 	}
 	/******* END GETTERS AND SETTERS*********/
 }
