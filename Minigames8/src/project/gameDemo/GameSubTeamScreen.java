@@ -25,7 +25,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		playerBoxes = new PlayerInfo();
-		timer = new MinigameTimer(30);
+		timer = new MinigameTimer(5);
 		update();
 		y = 50;
 	}
@@ -35,8 +35,9 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 		if(k == KeyEvent.VK_P)playerBoxes.penalizeAllPlayers(10);
 		if(k == KeyEvent.VK_SPACE){
 			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
-			playerBoxes.getPlayer().setScore(randPoint);
-			playerBoxes.transitionTurn();
+			int pScore = playerBoxes.getPlayer().getScore();
+			playerBoxes.getPlayer().setScore(pScore+= randPoint);
+			
 		}
 		update();
 	}
@@ -69,7 +70,11 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 				count=0;
 				timer.setSeconds(timer.getSeconds()-1);
 			}
-			g2.drawImage(timer.getImage(), 250, 50, null);
+			if(timer.getSeconds()==0){
+				playerBoxes.transitionTurn();
+				resetTime();
+			}
+			g2.drawImage(timer.getImage(), 910, 50, null);
 			timer.update();
 		}
 		catch (NullPointerException e){
@@ -80,6 +85,14 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 			e.printStackTrace();
 		}
 		//Arik Commit test 
+	}
+
+	private void resetTime() {
+		// TODO Auto-generated method stub
+		if(timer.getSeconds()==0){
+			timer.setSeconds(5);
+		}
+		
 	}
 
 	public static void time(int seconds) {
