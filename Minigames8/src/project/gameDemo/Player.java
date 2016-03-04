@@ -5,7 +5,7 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
-//Cindy---completed player class 
+/**Cindy---completed player class **/
  public class Player {
  	private String name;
  	private String playerImg;

@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import project.directors.UtilityMethods;
-
+/** 
+ * @author Cindy
+ * **/
 public class PlayerInfo {
 	ArrayList<Player> players;
 	int index;
@@ -16,6 +18,11 @@ public class PlayerInfo {
 	int width ;
 	int height;
 	
+	/**
+	 * Cindy - I made an arraylist of players so that we can add however many
+	 * players we need, for example, I made 4 player already
+	 **/
+
 	public PlayerInfo() {
 		players = new ArrayList<Player>();
 		index = 0;
@@ -77,11 +84,7 @@ public class PlayerInfo {
 	
 
 
-	/**
-	 * Cindy - I made an arraylist of players so that we can add however many
-	 * players we need, for example, I made 1 player already
-	 **/
-
+	
 	/**
 	 * Cindy - I made a arraylist of players and there is a keylistener to look
 	 * for when player presses space bar, when the player presses space bar then
