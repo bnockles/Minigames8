@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -10,7 +11,9 @@ import javax.imageio.ImageIO;
 
 public class MainMenu extends Screen {
 	BufferedImage icon;
-	public static Player Ash = new Player("Ash", determineImgSrc());
+	public static Player Ash = new Player("Ash", "/images/player0.png");
+	public static Player Brock = new Player("Brock", "/images/player1.png");
+	public static Player May = new Player("May", "/images/player2.png");
 	
 	public MainMenu(Game game) {
 		super(game);
@@ -31,8 +34,10 @@ public class MainMenu extends Screen {
 		g2.drawImage(icon, 0, 0, null);
 		g2.drawImage(Ash.getPlayerImage(), 270, 270, null);
 	}
+	
+	/**
 	public String determineImgSrc(){
-		int thing = Math.random()*3;
+		int thing = (int) (Math.random()*3);
 		if(int==0){
 		return 
 		}
@@ -44,4 +49,5 @@ public class MainMenu extends Screen {
 		}
 		return "/images/player2.png";
 	}
+	**/
 }

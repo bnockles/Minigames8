@@ -14,7 +14,7 @@ public class GameBoard {
 												{"Venasaur", "A leaf lizard thing that looks cool","115"},
 												{"Megaton","Another lizard pokemon that looks cool","130"},
 												//Unknown
-												{"Sceptile","Marijuana looking Pokemon","145"},
+												{"Sceptile","Plant looking Pokemon","145"},
 												//Lottery
 												{"Blastoise","Blue Turtle Pokemon","170"},
 												//Circle unknown
@@ -27,6 +27,7 @@ public class GameBoard {
 												{"Megaton","Another lizrad pokemon that looks cool","130"},
 												{"Megaton","Another lizrad pokemon that looks cool","130"},
 												};
+	static int[] priceList = {115, 130,145,170,185,200,240,255,130,130};
 	
 	/**
 	 * allChanceCardPropertiesInfo.get(0) = name;
@@ -39,9 +40,8 @@ public class GameBoard {
 	public static void main(String[] args) {
 		genPlayers(4);
 		for(int i = 0;i<allBasicPropertiesInfo.length;i++){
-			for(int j=0;j<allBasicPropertiesInfo[i].length;j++){
-				System.out.println(allBasicPropertiesInfo[i][j]);
-			}
+				new BasicProperty(allBasicPropertiesInfo[i][0],allBasicPropertiesInfo[i][1] , priceList[i]);
+			
 		}
 		/*
 		generateBoard();
