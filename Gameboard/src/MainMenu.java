@@ -22,9 +22,8 @@ public class MainMenu extends Screen {
 
 	public void paintScreen(Graphics2D g2) {
 		icon = null;
-		String imgSrc = determineImgSrc();
 		try{
-		URL url = getClass().getResource(imgSrc); 
+		URL url = getClass().getResource("/images/pokemonDemo.png"); 
 		icon = ImageIO.read(url);
 		}catch(Exception e){
 		e.printStackTrace();
@@ -38,11 +37,11 @@ public class MainMenu extends Screen {
 		return 
 		}
 		if(int==1){
-		return "/images/pokemonDemo1.png";	
+		return "/images/player0.png";	
 		}
 		if(int==2){
-		return "/images/pokemonDemo2.png";
+		return "/images/player1.png";
 		}
-		return "/images/pokemonDemo.png";
+		return "/images/player2.png";
 	}
 }
