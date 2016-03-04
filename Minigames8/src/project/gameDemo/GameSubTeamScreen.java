@@ -20,10 +20,12 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 
 	PlayerInfo playerBoxes;
 	int y;
-
+	MinigameTimer timer;
+	int count = 0;
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		playerBoxes = new PlayerInfo();
+		timer = new MinigameTimer(30);
 		update();
 		y = 50;
 	}
@@ -62,6 +64,17 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 //			y = (y+1)%500;
 			g2.drawImage(playerBoxes.getImage(),50,300,null);
 			playerBoxes.update();
+			count++;
+			if(count >=30  && timer.getSeconds()>0){
+				count=0;
+				timer.setSeconds(timer.getSeconds()-1);
+			}
+			g2.drawImage(timer.getImage(), 250, 50, null);
+			timer.update();
+		}
+		catch (NullPointerException e){
+//			e.printStackTrace();
+			System.out.println("NullPointerException was thrown (This is expected to happen once, at the very beginning. Check the paintScreen method in the GameSubTeam class if this ever happens more than once )");
 		}
 		catch (Exception e){
 			e.printStackTrace();
