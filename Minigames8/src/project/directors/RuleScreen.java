@@ -6,6 +6,8 @@ import java.awt.event.KeyListener;
 
 public class RuleScreen extends Screen {
 
+	
+	
 	public RuleScreen(Game game) {
 		super(game);
 		// TODO Auto-generated constructor stub

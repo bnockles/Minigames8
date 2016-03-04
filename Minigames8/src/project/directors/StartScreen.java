@@ -6,7 +6,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class StartScreen extends Screen implements KeyListener{
-
+	
+	public static final int START_SCREEN_OFF = 0;
+	public static final int START_SCREEN_ON = 1;
+	public static final int MAIN_MENU_OFF = 0;
+	public static final int MAIN_MENU_ON = 1;
+	public static final int RULE_SCREEN_OFF = 0;
+	public static final int RULE_SCREEN_ON = 1;
+	public static final int CONTROL_SCREEN_OFF = 0;
+	public static final int CONTROL_SCREEN_ON = 1;
+	public static final int MESSAGES_OFF = 0;
+	public static final int MESSAGES_ON = 1;
+	
 	public StartScreen(Game game) {
 		super(game);
 	}
