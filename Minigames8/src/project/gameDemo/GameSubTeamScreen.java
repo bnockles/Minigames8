@@ -25,7 +25,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		playerBoxes = new PlayerInfo();
-		timer = new MinigameTimer(5);
+		timer = new MinigameTimer(7);
 		update();
 		y = 50;
 	}
