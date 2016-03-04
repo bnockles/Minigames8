@@ -9,6 +9,11 @@ import project.directors.*;
 
 public class GameMenu extends Screen{
 	
+	public static final int GAME_STATUS_OFF = 0;
+	public static final int GAME_STATUS_ON = 1;
+	
+	
+	
 	public GameMenu(Game game){
 		super(game);
 	}
