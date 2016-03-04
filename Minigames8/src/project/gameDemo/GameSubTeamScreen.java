@@ -90,7 +90,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	private void resetTime() {
 		// TODO Auto-generated method stub
 		if(timer.getSeconds()==0){
-			timer.setSeconds(5);
+			timer.setSeconds(7);
 		}
 		
 	}
