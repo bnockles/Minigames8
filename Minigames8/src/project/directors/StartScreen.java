@@ -21,6 +21,7 @@ public class StartScreen extends Screen implements KeyListener{
 	public static final int CONTROL_SCREEN_ON = 1;
 	public static final int MESSAGES_OFF = 0;
 	public static final int MESSAGES_ON = 1;
+	public static final int INFO_CLEAR = 0 ;
 	
 	public StartScreen(Game game) {
 		super(game);

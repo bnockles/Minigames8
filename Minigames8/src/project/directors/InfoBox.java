@@ -11,38 +11,56 @@ import javax.swing.JFrame;
  * @author Matyas Fenyves
  *
  */
-public class InfoBox extends JFrame {
+public class InfoBox  {
 	
 //	public static String info = "hello" ;
 	public static int x ;
 	public static int y ;
 	public static int width ;
 	public static int height ;
-	public static String info = "No Current Message" ;
-	Graphics g ;
+	public static String info ;
+	public static Color rectColor ;
+	public static Color textColor ;
+	static Graphics g ;
 	
 	public void setGraphics(Graphics g)
 	{
 		this.g = g ;
 	}
 	
-	public InfoBox(int x, int y, int width, int height, Graphics g)
+	public InfoBox(int x, int y, int width, int height, String info, Graphics g)
 	{
 		this.x = x ;
 		this.y = y ;
 		this.width = width ;
 		this.height = height ;
+		this.info = info ;
 		this.g = g ;
+		this.rectColor = Color.green ;
+		this.textColor = Color.red ;
 		paint(g) ;
 	}
 	
-	public void paint(Graphics g) {
+	public InfoBox(int x, int y, int width, int height, String info, Graphics g, Color rectColor, Color textColor)
+	{
+		this.x = x ;
+		this.y = y ;
+		this.width = width ;
+		this.height = height ;
+		this.info = info ;
+		this.g = g ;
+		this.rectColor = rectColor ;
+		this.textColor = textColor ;
+		paint(g) ;
+	}
+	
+	private static void paint(Graphics g) {
 	    int fontSize = 20;
 	    
 	    g.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
-	    g.setColor(Color.green);
+	    g.setColor(rectColor);
 	    g.fillRect(x, y, width, height) ;
-	    g.setColor(Color.red);
+	    g.setColor(textColor);
 	    g.drawString(info, x+25, y+25);
 	    
 //	    message(g, info) ;
@@ -52,6 +70,12 @@ public class InfoBox extends JFrame {
 		info = newInfo ;
 		paint(g) ;
 		//repaint() ;
+	}
+	
+	public static void Clear()
+	{
+		info = "" ;
+		paint(g) ;
 	}
 	//main is for testing
 	public static void main(String[] args) {
