@@ -134,22 +134,11 @@ public class PlayerInfo {
 		public Player determineWin(){
 			//puts score into an variable
 			Player winner = null;
-//			int p1Score = p1.getScore();
-//			int p2Score = p2.getScore();
-//			int p3Score = p3.getScore();
-//			int p4Score = p4.getScore();
 			
 			int p1Score = players.get(0).getScore();
 			int p2Score = players.get(1).getScore();
 			int p3Score = players.get(2).getScore();
 			int p4Score = players.get(3).getScore();
-			
-//			String p1Name = p1.getName();
-//			String p2Name =	p2.getName();
-//			String p3Name = p3.getName();
-//			String p4Name = p4.getName();
-			
-		
 			
 			int scores[] = {p1Score, p2Score, p3Score, p4Score};
 			//sorts all the scores
@@ -171,56 +160,4 @@ public class PlayerInfo {
 			
 			return winner;
 		}
-
-	// //implements chooseMinigame interface -- will pick the minigame that will
-	// be choosen
-	// implement chooseMinigame();
-	//
-	// //extend gamescreen dimensons taht Arikc created for the demo
-	// extend DemoGameScreen();
-	//
-	// //abstract class timer
-	// extend Timer();
-	//
-	// //keylistener p for pause
-	//
-	// public static void main {
-	//
-	// //transitioning between players when timer is done
-	// //call timer class
-	//
-	// if (Timer.secondsLeft == 0) {
-	// endGame();
-	// } else {
-	// continueGame();
-	// }
-	//
-	// }
-	// boolean visibility = true;
-	//
-	// //arik doesn’t want the playerScore to show when racing game is choosen
-	// if (chooseMinigame == racingGame) {
-	// visibility = false;
-	// }
-	//
-	// //update score when player is changed
-	// public static void playerScore() {
-	// }
-	//
-	//
-	//
-	// public static void endGame() {
-	// //turn off window
-	// }
-	//
-	// String playerStatus;
-	// Boolean invisibility;
-	//
-	// if (playerStatus == live) {
-	// continueGame();
-	// } else {
-	// endGame();
-	// }
-	//
-	// }
 }
