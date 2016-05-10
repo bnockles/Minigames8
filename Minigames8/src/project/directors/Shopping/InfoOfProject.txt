@@ -1,0 +1,19 @@
+Simulator
+	Have AI units going on their own to buy drinks
+	Have constants control the population of the town, and the drinking age, etc.
+	
+
+shop
+	shelf
+		item
+		
+person
+	customer
+		seller
+		
+INTERFACES
+inStock
+	price = price
+isAlcoholic
+	
+isExpensive
