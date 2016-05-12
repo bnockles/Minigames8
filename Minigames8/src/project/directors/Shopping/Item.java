@@ -16,6 +16,11 @@ public class Item {
 	{
 		return quantity ;
 	}
+	
+	public void addStockOfItem(int i)
+	{
+		quantity += i ;
+	}
 	public String getName()
 	{
 		return name ;

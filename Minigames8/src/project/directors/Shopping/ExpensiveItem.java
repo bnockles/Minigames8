@@ -3,7 +3,7 @@ package project.directors.Shopping;
 public class ExpensiveItem extends Item implements ShipmentPurchase {
 
 	public ExpensiveItem(String name, int q, double price) {
-		super(name, q, price);
+		super(name, 0, price);
 	}
 
 	public Item addToCart(int quantity)
