@@ -15,29 +15,32 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-public class GameSubTeamScreen extends Screen implements KeyListener { 
+public class GameSubTeamScreen extends Screen implements KeyListener {
 
-
+	Minigame currentGame;
 	PlayerInfo playerBoxes;
 	int y;
 	MinigameTimer timer;
 	int count = 0;
+
 	public GameSubTeamScreen(Game game) {
 		super(game);
 		playerBoxes = new PlayerInfo();
 		timer = new MinigameTimer(7);
+		currentGame = new MatchingGame();
 		update();
 		y = 50;
 	}
 
 	public void keyPressed(KeyEvent arg0) {
 		int k = arg0.getKeyCode();
-		if(k == KeyEvent.VK_P)playerBoxes.penalizeAllPlayers(10);
-		if(k == KeyEvent.VK_SPACE){
+		if (k == KeyEvent.VK_P)
+			playerBoxes.penalizeAllPlayers(10);
+		if (k == KeyEvent.VK_SPACE) {
 			int randPoint = (int) (Math.random() * 100 + 1);// 1-100
 			int pScore = playerBoxes.getPlayer().getScore();
-			playerBoxes.getPlayer().setScore(pScore+= randPoint);
-			
+			playerBoxes.getPlayer().setScore(pScore += randPoint);
+
 		}
 		update();
 	}
@@ -58,41 +61,42 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	}
 
 	public void paintScreen(Graphics2D g2) {
-		
-		try{
+
+		try {
+			g2.drawImage(currentGame.getImage(), 300, 70, null);
+			currentGame.update();
 			g2.setColor(Color.black);
 			g2.drawString("This Demo is working!", 30, 75);
-//			y = (y+1)%500;
-			g2.drawImage(playerBoxes.getImage(),50,300,null);
+			// y = (y+1)%500;
+			g2.drawImage(playerBoxes.getImage(), 50, 300, null);
 			playerBoxes.update();
 			count++;
-			if(count >=30  && timer.getSeconds()>0){
-				count=0;
-				timer.setSeconds(timer.getSeconds()-1);
+			if (count >= 30 && timer.getSeconds() > 0) {
+				count = 0;
+				timer.setSeconds(timer.getSeconds() - 1);
 			}
-			if(timer.getSeconds()==0){
+			if (timer.getSeconds() == 0) {
 				playerBoxes.transitionTurn();
 				resetTime();
 			}
 			g2.drawImage(timer.getImage(), 910, 50, null);
 			timer.update();
-		}
-		catch (NullPointerException e){
-//			e.printStackTrace();
-			System.out.println("NullPointerException was thrown (This is expected to happen once, at the very beginning. Check the paintScreen method in the GameSubTeam class if this ever happens more than once )");
-		}
-		catch (Exception e){
+		} catch (NullPointerException e) {
+			// e.printStackTrace();
+			System.out
+					.println("NullPointerException was thrown (This is expected to happen once, at the very beginning. Check the paintScreen method in the GameSubTeam class if this ever happens more than once )");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//Arik Commit test 
+		// Arik Commit test
 	}
 
 	private void resetTime() {
 		// TODO Auto-generated method stub
-		if(timer.getSeconds()==0){
+		if (timer.getSeconds() == 0) {
 			timer.setSeconds(7);
 		}
-		
+
 	}
 
 	public static void time(int seconds) {
