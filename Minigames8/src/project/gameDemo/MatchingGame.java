@@ -14,14 +14,18 @@ public class MatchingGame extends Minigame {
 	private int width;
 	private int height;
 	private BufferedImage icon;
-	private String[] cards;
+	private ArrayList<Card> deck;
 
 	public MatchingGame() {
 		width = 500;
 		height = 100;
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		icon = null;
-
+		deck = new ArrayList<Card>();
+		deck.add(new Card("", "A"));
+		deck.add(new Card("", "B"));
+		deck.add(new Card("", "C"));
+		deck.add(new Card("", "D"));
 		try {
 			URL url = getClass().getResource("/images/Cards/back.png");
 			icon = ImageIO.read(url);
