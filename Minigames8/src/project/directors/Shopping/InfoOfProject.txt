@@ -26,7 +26,9 @@ Type of Juice:
 	
 Type of Beer:
 	["Guinness,"Blue Moon","Heineken","Corona","Budweiser"]
-
+	
+Type of Wine:
+	["Sweet White Wine", "Dry Red Wine", "Sweet Red Wine", "Dry White Wine"]
 
 
 
