@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 public abstract class Screen {
 
-	Game game;
+	protected Game game;
 	BufferedImage screenImage;
 	KeyListener keyListener;
 	int width;

@@ -48,7 +48,7 @@ public class PlayerInfo {
 	public void paint(Graphics2D g){
 		//repaint the background;
 		g.setColor(Color.black);
-		g.fillRect(0, 0, width, height);
+		g.fillRect(0, 0, width/2, height);
 
 		g.setColor(Color.white);
 		int currentY= 60;

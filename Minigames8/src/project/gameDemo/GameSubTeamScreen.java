@@ -1,13 +1,16 @@
 package project.gameDemo;
 
 import java.awt.Color;
+
 import javax.swing.JFrame;
+
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import project.directors.Game;
 import project.directors.Screen;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,7 +20,7 @@ import java.awt.image.BufferedImage;
 
 public class GameSubTeamScreen extends Screen implements KeyListener {
 
-	Minigame currentGame;
+	MatchingGame currentGame;
 	PlayerInfo playerBoxes;
 	int y;
 	MinigameTimer timer;
@@ -28,6 +31,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 		playerBoxes = new PlayerInfo();
 		timer = new MinigameTimer(7);
 		currentGame = new MatchingGame();
+		
 		update();
 		y = 50;
 	}
@@ -41,6 +45,13 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 			int pScore = playerBoxes.getPlayer().getScore();
 			playerBoxes.getPlayer().setScore(pScore += randPoint);
 
+		}
+		if (k == KeyEvent.VK_1) {
+			this.game.setScreen(new RacingGame(this.game));
+			
+		}
+		if (k == KeyEvent.VK_2) {
+			
 		}
 		update();
 	}
@@ -63,13 +74,14 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 	public void paintScreen(Graphics2D g2) {
 
 		try {
-			g2.drawImage(currentGame.getImage(), 300, 70, null);
-			currentGame.update();
+			
 			g2.setColor(Color.black);
 			g2.drawString("This Demo is working!", 30, 75);
 			// y = (y+1)%500;
 			g2.drawImage(playerBoxes.getImage(), 50, 300, null);
 			playerBoxes.update();
+			g2.drawImage(currentGame.getImage(), 150, 100, null);
+			currentGame.update();
 			count++;
 			if (count >= 30 && timer.getSeconds() > 0) {
 				count = 0;

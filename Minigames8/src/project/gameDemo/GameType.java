@@ -1,10 +1,12 @@
 package project.gameDemo;
 
-public interface GameType {
-	public final int MATCHING_GAME = 0;
-	public final int RACING_GAME = 1;
-	public final int PUZZLE_GAME = 2;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-	public int getGameType();
-	public void setGameType(int gameID);
+import project.directors.Screen;
+
+public interface GameType{
+
+public Screen getScreen();
+
 }

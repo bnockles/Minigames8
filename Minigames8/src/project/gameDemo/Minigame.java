@@ -5,11 +5,15 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
+import project.directors.Screen;
+
 public class Minigame implements KeyListener, GameType {
 	MatchingGame mG;
+	RacingGame rG;
 	private BufferedImage image;
 
 	public Minigame() {
+		
 	}
 
 	public void keyPressed(KeyEvent arg0) {
@@ -46,14 +50,13 @@ public class Minigame implements KeyListener, GameType {
 		
 	}
 
-	public int getGameType() {
+	public Screen getScreen() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
-	public void setGameType(int gameID) {
-		// TODO Auto-generated method stub
-		
-	}
+
+
+
 
 }
