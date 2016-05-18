@@ -1,20 +1,8 @@
 package project.directors.Shopping;
 
 
-public class Inventory {
+public interface Inventory {
 	
-	private Item[] items ;
-	public Inventory(Item...items)
-	{
-		this.items = items ;
-	}
-	public void newItems(Item...items)
-	{
-		
-	}
-	public boolean contains(Item item)
-	{
-		
-		return false;
-	}
+	public void newItems(Item...items);
+	public boolean contains(Item item);
 }

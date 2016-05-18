@@ -4,21 +4,11 @@ public class Item {
 
 	private int quantity ;
 	private String name ;
-	private double price ;
-	private String type;
 	
-	public Item(String name, int q, double price)
+	public Item(String name, int q)
 	{
 		this.name = name ;
 		this.quantity = q ;
-		this.price = price ;
-	}
-	public Item(String name, int q, double price, String type)
-	{
-		this.name = name ;
-		this.quantity = q ;
-		this.price = price ;
-		this.type  = type;
 	}
 	public int getQuantity()
 	{
@@ -43,7 +33,7 @@ public class Item {
 		else
 		{
 			this.quantity -= amount ;
-			return new Item(name, amount, price) ;
+			return new Item(name, amount) ;
 		}
 	}
 	public Item addToCart()
@@ -57,11 +47,7 @@ public class Item {
 		else
 		{
 			this.quantity -= amount ;
-			return new Item(name, amount, price) ;
+			return new Item(name, amount) ;
 		}
-	}
-	public double getPrice()
-	{
-		return price ;
 	}
 }
