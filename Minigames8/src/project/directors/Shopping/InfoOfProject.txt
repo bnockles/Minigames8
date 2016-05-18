@@ -18,6 +18,14 @@ isAlcoholic
 	
 isExpensive
 
+Types of Milk:
+	["1% fat","2% fat", "lactose-free","whole","fat-free","skim","chocolate","butter","raw"]
+	
+Type of Juice:
+	["orange","cherry","grapefruit","grape","lemon","apple","mango"]
+	
+Type of Beer:
+	["Guinness,"Blue Moon","Heineken","Corona","Budweiser"]
 
 
 

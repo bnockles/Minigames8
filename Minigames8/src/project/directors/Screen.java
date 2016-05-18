@@ -16,6 +16,22 @@ public abstract class Screen extends JFrame{
 	protected int height;
 	InfoBox info ;
 	
+	public static final int START_SCREEN_OFF = 0;
+	public static final int START_SCREEN_ON = 1;
+	public static final int MAIN_MENU_OFF = 0;
+	public static final int MAIN_MENU_ON = 1;
+	public static final int RULE_SCREEN_OFF = 0;
+	public static final int RULE_SCREEN_ON = 1;
+	public static final int CONTROL_SCREEN_OFF = 0;
+	public static final int CONTROL_SCREEN_ON = 1;
+	public static final int MESSAGES_OFF = 0;
+	public static final int MESSAGES_ON = 1;
+	public static final int INFO_CLEAR = 0 ;
+	public static final int GAME_STATUS_OFF = 0;
+	public static final int GAME_STATUS_ON = 1;
+	
+	int gameStatus = GAME_STATUS_ON;
+	
 	
 	//Game is a parameter here so that every screen can control the game while it is active
 	public Screen(Game game) {

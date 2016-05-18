@@ -1,6 +1,6 @@
 package project.directors.Shopping;
 
-public class Beer extends CheapItem implements Alcoholic {
+public class Beer extends Item implements Alcoholic {
 
 	public Beer(String name, int q, double price) {
 		super(name, q, price);

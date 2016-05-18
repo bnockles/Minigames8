@@ -5,12 +5,20 @@ public class Item {
 	private int quantity ;
 	private String name ;
 	private double price ;
+	private String type;
 	
 	public Item(String name, int q, double price)
 	{
 		this.name = name ;
 		this.quantity = q ;
 		this.price = price ;
+	}
+	public Item(String name, int q, double price, String type)
+	{
+		this.name = name ;
+		this.quantity = q ;
+		this.price = price ;
+		this.type  = type;
 	}
 	public int getQuantity()
 	{
