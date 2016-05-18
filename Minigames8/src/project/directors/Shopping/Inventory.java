@@ -7,4 +7,13 @@ public class Inventory {
 	{
 		this.items = items ;
 	}
+	public void newItems(Item...items)
+	{
+		
+	}
+	public boolean contains(Item item)
+	{
+		
+		return false;
+	}
 }
