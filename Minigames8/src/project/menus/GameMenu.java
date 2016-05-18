@@ -9,10 +9,9 @@ import project.directors.*;
 
 public class GameMenu extends Screen{
 	
-	public static final int GAME_STATUS_OFF = 0;
-	public static final int GAME_STATUS_ON = 1;
 	
 	
+	public int gameStatus = 0;
 	
 	public GameMenu(Game game){
 		super(game);
@@ -20,12 +19,12 @@ public class GameMenu extends Screen{
 	
 	public void keyPressed(KeyEvent k)
 	{
-		/**if(k.getKeyCode() == KeyEvent.VK_ESCAPE){
+		if(k.getKeyCode() == KeyEvent.VK_ESCAPE && gameStatus == GAME_STATUS_ON){
 			
 			Screen startScreen = new StartScreen(game);
 			
 			game.setScreen(startScreen);
-		}**/
+		}
 	}
 
 	public KeyListener getKeyListener() {
