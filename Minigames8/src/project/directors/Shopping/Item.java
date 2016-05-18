@@ -1,6 +1,6 @@
 package project.directors.Shopping;
 
-public class Item {
+public class Item implements Drink {
 
 	private int quantity ;
 	private String name ;
@@ -23,31 +23,5 @@ public class Item {
 	{
 		return name ;
 	}
-	public Item addToCart(int amount)
-	{
-		if(this.quantity - amount < 0)
-		{
-			this.quantity = 0 ;
-			return this ;
-		}
-		else
-		{
-			this.quantity -= amount ;
-			return new Item(name, amount) ;
-		}
-	}
-	public Item addToCart()
-	{
-		int amount = 1 ;
-		if(this.quantity - amount < 0)
-		{
-			this.quantity = 0 ;
-			return this ;
-		}
-		else
-		{
-			this.quantity -= amount ;
-			return new Item(name, amount) ;
-		}
-	}
+	
 }

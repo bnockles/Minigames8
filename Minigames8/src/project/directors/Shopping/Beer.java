@@ -1,8 +1,8 @@
 package project.directors.Shopping;
 
-public class Beer extends Item implements Alcoholic {
+public class Beer extends Item {
 
-	public Beer(String name, int q, double price) {
+	public Beer(String name, int q) {
 		super(name, q);
 	}
 

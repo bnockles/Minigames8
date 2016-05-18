@@ -52,10 +52,16 @@ public class Person {
 	}
 	public void act(Shop shop)
 	{
+		Item currCraving ;
+		if(alcoholic && age < 21)
+			happy = false ;
 		for(int i = 0 ; i < cravings.length ; i++)
 		{
-			if(!shop.contains(new Item(cravings[i], 1)))
+			currCraving = new Item(cravings[i], 1) ;
+			if(!shop.contains(currCraving))
 				happy = false ;
+			else
+				shop.purchase(currCraving) ;
 		}
 	}
 }

@@ -15,5 +15,9 @@ public class Shop implements Inventory {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public void purchase(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
