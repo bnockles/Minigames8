@@ -1,5 +1,6 @@
 package project.gameDemo;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
@@ -23,6 +24,15 @@ public class Card {
 		}
 	}
 
+	public void changeImg(){
+		try {
+			URL url = getClass().getResource(cardImg);
+			icon = ImageIO.read(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public String getletter() {
 		return letter;
 
@@ -34,6 +44,9 @@ public class Card {
 	}
 	public String getCardImg(){
 		return cardImg;
+	}
+	public void setCardImg(String cardImg){
+		this.cardImg = cardImg;
 	}
 
 	public boolean getFace() {
