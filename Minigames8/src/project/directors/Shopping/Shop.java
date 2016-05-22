@@ -10,9 +10,13 @@ public class Shop implements Inventory {
 		this.items = items ;
 	}
 	public void addItem(Item item) {
-		// CHEN need this to add the given item to the array items. OR if the item is already in the array,
-		//increase the quantity by the given amount
-		
+		for(int i = 0 ; i < items.length ; i++)
+		{
+			if(items[i].getName().equals(item.getName()))
+			{
+				items[i].addStockOfItem(item.getQuantity());
+			}
+		}
 	}
 	public boolean contains(Item item) {
 		for(int i = 0 ; i < items.length ; i++)
