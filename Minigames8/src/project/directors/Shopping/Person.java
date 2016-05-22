@@ -4,7 +4,7 @@ public class Person {
 	private String name ;
 	private int age ;
 	private boolean alcoholic ;
-	private String[] cravings ;
+	private String[] cravings = new String[3] ;
 	private boolean lactoseIntolerant ;
 	private boolean classy ;
 	private boolean happy ;
@@ -27,6 +27,8 @@ public class Person {
 				cravings[i] = beer[(int)(Math.random()*beer.length)] ;
 			i++ ;
 		}
+		else
+			cravings = new String[2] ;
 		if(likesMilk)
 		{
 			if(lactoseIntolerant)
@@ -53,8 +55,11 @@ public class Person {
 	public void act(Shop shop)
 	{
 		Item currCraving ;
-		if(alcoholic && age < 21)
+		if(alcoholic && age < RunBeverageStore.DRINKING_AGE)
+		{
 			happy = false ;
+			
+		}
 		for(int i = 0 ; i < cravings.length ; i++)
 		{
 			currCraving = new Item(cravings[i], 1) ;
@@ -63,5 +68,14 @@ public class Person {
 			else
 				shop.purchase(currCraving) ;
 		}
+	}
+	public boolean isAlcoholic() {
+		return alcoholic;
+	}
+	public boolean isLactoseIntolerant() {
+		return lactoseIntolerant;
+	}
+	public boolean isHappy() {
+		return happy;
 	}
 }
