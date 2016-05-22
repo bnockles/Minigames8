@@ -23,5 +23,9 @@ public class Item implements Drink {
 	{
 		return name ;
 	}
+	public void decrement()
+	{
+		quantity-- ;
+	}
 	
 }

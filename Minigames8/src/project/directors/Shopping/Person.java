@@ -13,8 +13,10 @@ public class Person {
 	{
 		this.name = name ;
 		this.age = (int)(Math.random()*60 + 16) ;
-		this.alcoholic = (Math.random()*100>75)?true:false ;
-		this.likesMilk = (Math.random()*100>50)?true:false ;
+		int alcRatio = (int)(Math.random()*20+90-RunBeverageStore.DRINKING_AGE) ;
+		int lacRatio = (int)(Math.random()*10+80) ;
+		this.alcoholic = (Math.random()*100>alcRatio)?true:false ;
+		this.likesMilk = (Math.random()*100>lacRatio)?true:false ;
 		this.classy = (Math.random()*100>60)?true:false ;
 		this.lactoseIntolerant = (Math.random()*100>85)?true:false ;
 		this.happy = true ;
@@ -55,16 +57,16 @@ public class Person {
 	public void act(Shop shop)
 	{
 		Item currCraving ;
-		if(alcoholic && age < RunBeverageStore.DRINKING_AGE)
+		if(alcoholic && this.age < RunBeverageStore.DRINKING_AGE)
 		{
-			happy = false ;
+			this.happy = false ;
 			
 		}
 		for(int i = 0 ; i < cravings.length ; i++)
 		{
 			currCraving = new Item(cravings[i], 1) ;
 			if(!shop.contains(currCraving))
-				happy = false ;
+				this.happy = false ;
 			else
 				shop.purchase(currCraving) ;
 		}
