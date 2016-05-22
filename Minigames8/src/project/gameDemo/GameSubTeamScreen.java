@@ -48,6 +48,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 			currentGame = new PuzzleGame();
 			puzzle = true;
 			timer.setSeconds(7);
+			matching = false;
 		}
 		
 		if (k == KeyEvent.VK_M) {
@@ -57,6 +58,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 			playerBoxes.setRound(1);
 			matching = true;
 			timer.setSeconds(7);
+			puzzle = false;
 		}
 		//checks to see if it is a matching game
 		if (matching) {
@@ -168,7 +170,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 
 				}
 				
-				if (playerBoxes.getCount() == 4) {
+				if (playerBoxes.getCount()==4) {
 					int[] dScores = playerBoxes.getScores();
 					for (int i = 0; i < dScores.length - 1; i++) {
 						if (dScores[i] == dScores[i + 1]) {
@@ -184,7 +186,7 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 										+ playerBoxes.getRound() + ".");
 					}
 					playerBoxes.resetPlayers();
-					playerBoxes.setCount(0);
+					playerBoxes.setCount(1);
 				}
 				if (currentGame.getCounter() == 8) {
 					JOptionPane.showMessageDialog(
@@ -229,10 +231,11 @@ public class GameSubTeamScreen extends Screen implements KeyListener {
 				g2.drawString("It is " + playerBoxes.getPlayer().getName()
 						+ " turn.", 150, 120);
 				currentGame.update();
-
+			
 			}
 			if(puzzle){
 				g2.drawString("This is a puzzle game", 30, 75);
+			
 			}
 			count++;
 			if (count >= 30 && timer.getSeconds() > 0) {

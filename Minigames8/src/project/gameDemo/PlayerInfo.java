@@ -75,15 +75,16 @@ public class PlayerInfo {
 					(int) (p.getIcon().getWidth() * scaleFactor), 50);
 			currentY += 100;
 		}
-		// if (count == 4) {
-		//
-		// JOptionPane.showMessageDialog(null, determineWin().getName()
-		// + "is the winner of round " + round + ".");
-		// currentY += 30;
-		// resetPlayers();
-		// count = 0;
-		//
-		// }
+		if (count == 4) {
+			if (determineWin() != null) {
+				JOptionPane.showMessageDialog(null, determineWin().getName()
+						+ " is the winner of round " + round);
+			} else {
+				JOptionPane.showMessageDialog(null, "It's a tie.");
+			}
+			resetPlayers();
+			setCount(0);
+		}
 
 	}
 
@@ -103,13 +104,6 @@ public class PlayerInfo {
 		// update will change the graphics to show the new information
 		update();
 	}
-
-	/**
-	 * Cindy - I made a arraylist of players and there is a keylistener to look
-	 * for when player presses space bar, when the player presses space bar then
-	 * there will be an random number from 1-100 that will be given to the
-	 * player as points.
-	 **/
 
 	public Player getPlayer() {
 		return players.get(index);
@@ -188,8 +182,9 @@ public class PlayerInfo {
 		int winScore = scores[scores.length - 1];
 
 		// display winner
-
-		if (p1Score == winScore) {
+		if (winScore == scores[scores.length - 2]) {
+			winner = null;
+		} else if (p1Score == winScore) {
 			winner = players.get(0);
 		} else if (p2Score == winScore) {
 			winner = players.get(1);
