@@ -12,9 +12,10 @@ public class Card {
 	private String cardImg;
 	BufferedImage icon;
 
-	public Card(String cardImg, String letter) {
+	public Card(String cardImg, String letter,boolean face) {
 		this.cardImg = cardImg;
 		this.letter = letter;
+		this.face = face;
 		icon = null;
 		try {
 			URL url = getClass().getResource(cardImg);
