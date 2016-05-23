@@ -110,8 +110,6 @@ public class RunBeverageStore {
 		System.out.println("The satisfaction of the shop owner is " + shopSold + ", due to a " + shopExcess + " excess of drinks in stock.") ;
 	}
 	
-	//CHEN NEED THIS PLEASE
-	//needs to take the user input as explained in the prints above, and make them into a 2d Array. one layer number, other layer the name
 	private static String[][] decipher(String gE) {
 //		System.out.println(gE);
 		String[] s = gE.split(",");
