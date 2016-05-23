@@ -28,12 +28,12 @@ public class RunBeverageStore {
 	static String generalEntry = "" ;
 	static DecimalFormat percentage = new DecimalFormat("###.##%") ;
 	static Scanner scanner = new Scanner(System.in);
-	static Shop shop = new Shop(new Milk("1% fat", 10),new Milk("2% fat", 10),new Milk("lactose-free", 10),new Milk("whole", 10),
+	static Shop shop = new Shop(new Milk("1%fat", 10),new Milk("2%fat", 10),new Milk("lactose-free", 10),new Milk("whole", 10),
 			new Milk("fat-free", 10),new Milk("skim", 10),new Milk("chocolate", 10),new Milk("butter", 10),new Milk("raw", 10),
 			new Juice("orange", 10),new Juice("cherry", 10),new Juice("grapefruit", 10),new Juice("grape", 10),new Juice("lemon", 10),
-			new Juice("apple", 10),new Juice("mango", 10),new Beer("Guinness", 10),new Beer("Blue Moon", 10),new Beer("Heineken", 10),
-			new Beer("Corona", 10),new Beer("Budweiser", 10),new Wine("Sweet White Wine", 10),new Wine("Dry White Wine", 10),
-			new Wine("Sweet Red Wine", 10),new Wine("Dry Red Wine", 10));
+			new Juice("apple", 10),new Juice("mango", 10),new Beer("Guinness", 10),new Beer("BlueMoon", 10),new Beer("Heineken", 10),
+			new Beer("Corona", 10),new Beer("Budweiser", 10),new Wine("SweetWhiteWine", 10),new Wine("DryWhiteWine", 10),
+			new Wine("SweetRedWine", 10),new Wine("DryRedWine", 10));
 	static Person[] residents ;
 	
 	public static void main(String[] args) {
@@ -42,10 +42,10 @@ public class RunBeverageStore {
 		residents = new Person[POPULATION] ;
 		System.out.println("Enter a legal Drinking age cap");
 		DRINKING_AGE = scanner.nextInt();
-		System.out.println("Milk Options are: 1% fat, 2% fat, lactose-free, whole, fat-free, skim, chocolate, butter, raw");
+		System.out.println("Milk Options are: 1%fat, 2%fat, lactose-free, whole, fat-free, skim, chocolate, butter, raw");
 		System.out.println("Juice Options are: orange, cherry, grapefruit, grape, lemon, apple, mango");
-		System.out.println("Beer Options are: Guinness, Blue Moon, Heineken, Corona, Budweiser");
-		System.out.println("Wine Options are: Sweet White Wine, Dry Red Wine, Sweet Red Wine, Dry White Wine");
+		System.out.println("Beer Options are: Guinness, BlueMoon, Heineken, Corona, Budweiser");
+		System.out.println("Wine Options are: SweetWhiteWine, DryRedWine, SweetRedWine, DryWhiteWine");
 		for(int i = 0 ; i < POPULATION ; i++)
 		{
 			residents[i] = new Person("Person" + i, juice, milk, beer, wine) ;
@@ -63,8 +63,13 @@ public class RunBeverageStore {
 		satisfied = 0 ;
 		System.out.println() ;
 		System.out.println("Enter quantities, followed by the name of each drink you would like in the local store. Separated by commas.");
-		System.out.println("Ex. 1 orange, 3 Blue Moon, 20 1% fat");
+		System.out.println("Ex. 1 orange,3 BlueMoon,20 1%fat");
 		generalEntry = scanner.next();
+		generalEntry += scanner.nextLine();
+		if(generalEntry.equals("quit"))
+		{
+			return ;
+		}
 		String[][] drinks = decipher(generalEntry) ;
 		
 		for(int i = 0 ; i < drinks.length ; i++)
@@ -89,15 +94,17 @@ public class RunBeverageStore {
 			if(p.isHappy())
 				satisfied++ ;
 		}
-		sold = (double)shop.getPurchased()/(double)shop.getTotal() ;
+		sold = ((double)shop.getPurchased()/(double)shop.getTotal())/100.00 ;
+//		System.out.println(shop.getPurchased());
+//		System.out.println(shop.getTotal());
 		alcoholismRate = percentage.format((alcoholics/(double)POPULATION)) ;
 		underAgeAlcoholism = percentage.format((underAgeAlcoholics/(double)POPULATION)) ;
 		lactoseRate = percentage.format((lactoseIntolerants/(double)POPULATION)) ;
 		townSatisfaction = percentage.format((satisfied/(double)POPULATION)) ;
 		shopSold = percentage.format(sold) ;
-		shopExcess = percentage.format(100.00 - sold) ;
+		shopExcess = percentage.format((100.00 - sold)/100.00) ;
 		System.out.println("The rate of alcoholism in the town is: " + alcoholismRate) ;
-		System.out.println("The rate of under age alcoholism in the town is: " + underAgeAlcoholism) ;
+		System.out.println("The rate of under age alcoholic in the town is: " + underAgeAlcoholism) ;
 		System.out.println("The rate of lactose intolerance in the town is: " + lactoseRate) ;
 		System.out.println("The rate of consumer satisfaction with the store in the town is: " + townSatisfaction) ;
 		System.out.println("The satisfaction of the shop owner is " + shopSold + ", due to a " + shopExcess + " excess of drinks in stock.") ;
@@ -106,7 +113,20 @@ public class RunBeverageStore {
 	//CHEN NEED THIS PLEASE
 	//needs to take the user input as explained in the prints above, and make them into a 2d Array. one layer number, other layer the name
 	private static String[][] decipher(String gE) {
-		return new String[0][0];
+//		System.out.println(gE);
+		String[] s = gE.split(",");
+		String[][] de = new String[s.length][2];
+//		System.out.println(Arrays.toString(s));
+		for(int i = 0; i < s.length; i++)
+		{
+			String[] temp = s[i].split(" ");
+//			System.out.println(Arrays.toString(temp));
+			de[i][0] = temp[0];
+			de[i][1] = temp[1];
+		}
+		
+		
+		return de;
 	}
 	
 }
