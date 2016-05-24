@@ -95,15 +95,14 @@ public class RunBeverageStore {
 				satisfied++ ;
 		}
 		sold = ((double)shop.getPurchased()/(double)shop.getTotal()) ;
-		System.out.println(shop.getPurchased());
-		System.out.println(shop.getTotal());
-		System.out.println(percentage.format(.26666)) ;
+//		System.out.println(shop.getPurchased());
+//		System.out.println(shop.getTotal());
 		alcoholismRate = percentage.format((alcoholics/(double)POPULATION)) ;
 		underAgeAlcoholism = percentage.format((underAgeAlcoholics/(double)POPULATION)) ;
 		lactoseRate = percentage.format((lactoseIntolerants/(double)POPULATION)) ;
 		townSatisfaction = percentage.format((satisfied/(double)POPULATION)) ;
-		shopSold = percentage.format(sold) ;
-		shopExcess = percentage.format((1.00 - sold)) ;
+		shopSold = percentage.format((double)shop.getPurchased()/(double)shop.getTotal()) ;
+		shopExcess = percentage.format((1.00 - (double)shop.getPurchased()/(double)shop.getTotal())) ;
 		System.out.println("The rate of alcoholism in the town is: " + alcoholismRate) ;
 		System.out.println("The rate of under age alcoholic in the town is: " + underAgeAlcoholism) ;
 		System.out.println("The rate of lactose intolerance in the town is: " + lactoseRate) ;
